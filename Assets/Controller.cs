@@ -225,13 +225,21 @@ public class Controller : MonoBehaviour {
 			switch (consequence.field)
 			{
 				case "money":
-				case "gold": status.money = Adjust(status.money, consequence); break;
+				case "gold":
+					status.money = Adjust(status.money, consequence);
+					break;
 
-				case "love": status.love = Adjust(status.love, consequence); break;
+				case "love":
+					status.love = Adjust(status.love, consequence);
+					break;
 
-				case "respect": status.respect = Adjust(status.respect, consequence); break;
+				case "respect":
+					status.respect = Adjust(status.respect, consequence);
+					break;
 
-				default: Debug.LogError("Unrecognised consequence field: " + consequence.field); break;
+				default:
+					Debug.LogError("Unrecognised consequence field: " + consequence.field);
+					break;
 			}
 		}
 
