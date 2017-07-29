@@ -41,7 +41,7 @@ public struct Status
 	public float love;
 	public float respect;
 
-	Status(float initialMoney = 100)
+	public Status(float initialMoney = 100)
 	{
 		day = 0;
 		love = 0;
@@ -57,8 +57,8 @@ public struct Status
 
 public class Controller : MonoBehaviour
 {
-
-	public Status status = new Status();
+	public float initialMoney = 100;
+	private Status status;
 
 	public List<Event> allEvents = new List<Event>();
 
@@ -71,6 +71,7 @@ public class Controller : MonoBehaviour
 	// Configuration
 	public int eventsToShowPerDay = 5;
 	public int daysPeopleWillWait = 2;
+	public List<Consequence> consequencesForIgnoredPetition = new List<Consequence>();
 
 	// Status UI
 	public Text dayText;
@@ -91,6 +92,18 @@ public class Controller : MonoBehaviour
 	public ChoiceButtonScript choiceButtonPrefab;
 	public GameObject choiceButtonsGroup;
 
+	// Game Over UI
+	public GameObject gameOverPanel;
+
+	void ShowPanel(GameObject panelToShow)
+	{
+		courtPanel.SetActive(false);
+		eventPanel.SetActive(false);
+		gameOverPanel.SetActive(false);
+
+		if (panelToShow) panelToShow.SetActive(true);
+	}
+
 	// Use this for initialization
 	void Start()
 	{
@@ -107,8 +120,9 @@ public class Controller : MonoBehaviour
 
 	public void BeginGame()
 	{
-		courtPanel.SetActive(false);
-		eventPanel.SetActive(false);
+		status = new Status(initialMoney);
+
+		ShowPanel(null);
 
 		unseenEvents.Clear();
 		seenEvents.Clear();
@@ -140,6 +154,12 @@ public class Controller : MonoBehaviour
 		{
 			courtEvents.Remove(e);
 			seenEvents.Add(e);
+
+			// apply ignored-petition consequences
+			foreach (var c in consequencesForIgnoredPetition)
+			{
+				SufferTheConsequence(c);
+			}
 		}
 
 		// ensure there are X events in the court today
@@ -172,8 +192,9 @@ public class Controller : MonoBehaviour
 
 	public void ShowCourt()
 	{
-		// Now, init the court display
+		// 
 
+		// Now, init the court display
 		courtDescriptionText.text = string.Format("There are {0} people waiting in your court.", courtEvents.Count);
 
 		foreach (Transform oldButton in petitionButtonsGroup.transform)
@@ -187,8 +208,7 @@ public class Controller : MonoBehaviour
 			button.Init(this, e);
 		}
 
-		courtPanel.SetActive(true);
-		eventPanel.SetActive(false);
+		ShowPanel(courtPanel);
 	}
 
 	public void OnEventSelected(Event e)
@@ -214,8 +234,7 @@ public class Controller : MonoBehaviour
 			button.Init(this, choice, choiceIndex);
 		}
 
-		courtPanel.SetActive(false);
-		eventPanel.SetActive(true);
+		ShowPanel(eventPanel);
 	}
 
 	public void HideEvent()
@@ -244,34 +263,55 @@ public class Controller : MonoBehaviour
 
 		foreach (var consequence in choice.consequences)
 		{
-			switch (consequence.field)
-			{
-				case "money":
-				case "gold":
-					status.money = Adjust(status.money, consequence);
-					break;
-
-				case "love":
-					status.love = Adjust(status.love, consequence);
-					break;
-
-				case "respect":
-					status.respect = Adjust(status.respect, consequence);
-					break;
-
-				default:
-					Debug.LogError("Unrecognised consequence field: " + consequence.field);
-					break;
-			}
+			SufferTheConsequence(consequence);
 		}
 
 		seenEvents.Add(currentEvent);
+		ShowCourt();
 
 		UpdateUI();
+	}
 
-		// TODO: check if we lost!
+	void SufferTheConsequence(Consequence consequence)
+	{
+		switch (consequence.field)
+		{
+			case "money":
+			case "gold":
+				status.money = Adjust(status.money, consequence);
+				break;
 
-		ShowCourt();
+			case "love":
+				status.love = Adjust(status.love, consequence);
+				break;
+
+			case "respect":
+				status.respect = Adjust(status.respect, consequence);
+				break;
+
+			default:
+				Debug.LogError("Unrecognised consequence field: " + consequence.field);
+				break;
+		}
+	}
+
+	void CheckIfWeLost()
+	{
+		bool weLost = false;
+
+		if (status.love <= -100) weLost = true;
+		if (status.respect <= -100) weLost = true;
+		if (status.money <= 0) weLost = true;
+
+		if (weLost)
+		{
+			ShowPanel(gameOverPanel);
+		}
+	}
+
+	public void OnRestartClicked()
+	{
+		BeginGame();
 	}
 
 	void UpdateUI()
@@ -279,5 +319,7 @@ public class Controller : MonoBehaviour
 		loveSlider.value = status.love;
 		respectSlider.value = status.respect;
 		moneyText.text = string.Format("Gold: {0}", status.money);
+
+		CheckIfWeLost();
 	}
 }
