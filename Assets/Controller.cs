@@ -70,6 +70,9 @@ public class Controller : MonoBehaviour {
 
 	// Status UI
 	public Text dayText;
+	public Text moneyText;
+	public Slider loveSlider;
+	public Slider respectSlider;
 
 	// Court UI
 	public GameObject courtPanel;
@@ -110,6 +113,7 @@ public class Controller : MonoBehaviour {
 		unseenEvents.AddRange(allEvents);
 
 		StartDay();
+		UpdateUI();
 	}
 
 	public void StartDay()
@@ -141,6 +145,7 @@ public class Controller : MonoBehaviour {
 		}
 
 		ShowCourt();
+		UpdateUI();
 	}
 
 	public void ShowCourt()
@@ -219,20 +224,30 @@ public class Controller : MonoBehaviour {
 		{
 			switch (consequence.field)
 			{
-				case "money": status.money = Adjust(status.money, consequence); break;
+				case "money":
+				case "gold": status.money = Adjust(status.money, consequence); break;
+
 				case "love": status.love = Adjust(status.love, consequence); break;
+
 				case "respect": status.respect = Adjust(status.respect, consequence); break;
-				default: break;
+
+				default: Debug.LogError("Unrecognised consequence field: " + consequence.field); break;
 			}
 		}
 
 		seenEvents.Add(currentEvent);
 
-		// TODO: Update UI!
-		Debug.Log(status);
+		UpdateUI();
 
 		// TODO: check if we lost!
 
 		ShowCourt();
+	}
+
+	void UpdateUI()
+	{
+		loveSlider.value = status.love;
+		respectSlider.value = status.respect;
+		moneyText.text = string.Format("Gold: {0}", status.money);
 	}
 }
