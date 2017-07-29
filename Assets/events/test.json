@@ -1,77 +1,387 @@
 { "events": [
 	{
-		"character": "Bill",
-		"description": "This is a test event, yay!",
+		"character": "Fred the Farmer",
+		"description": "A local farmer, forlorn and dishevelled, pays you a visit. He looks exhausted.\n\"Yer majesty, my crops 'ave failed and I 'ave nothing to trade at market this year. I fear me family will starve this winter. Please, can ye 'elp a loyal subject?\"\nDo you want to compensate the farmer or ignore his plea for help?",
 		"choices": [
 			{
-				"description": "Kill Bill",
+				"description": "Compensate Fred",
 				"consequences": [
 					{
-						"field": "money",
-						"minChange": 10,
+						"field": "gold",
+						"minChange": -50,
+						"maxChange": -20
+					},
+					{
+						"field": "love",
+						"minChange": 5,
 						"maxChange": 20
 					}
 				]
 			},
 			{
-				"description": "Save Bill",
+				"description": "Ignore Fred's plea",
 				"consequences": [
 					{
 						"field": "love",
-						"minChange": 30,
-						"maxChange": 35
+						"minChange": -20,
+						"maxChange": -10
+					},
+					{
+						"field": "respect",
+						"minChange": -20,
+						"maxChange": -10
+					}
+				]
+			},
+			{
+				"description": "Kill Fred",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
 					}
 				]
 			}
 		]
 	},
 	{
-		"character": "Bob",
-		"description": "This is a test event, yay!",
+		"character": "Martin the Medieval Milkman",
+		"description": "Your regular milkman, out on his daily rounds, comes to deliver your usual two pints of fresh, creamy milk.\n\"Here you go, sire, your usual. That will be 20 gold pieces.\"",
 		"choices": [
+			{
+				"description": "Pay Martin",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -20,
+						"maxChange": -20
+					}
+				]
+			},
+			{
+				"description": "Take the milk and refuse to pay",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -15,
+						"maxChange": -5
+					},
+					{
+						"field": "respect",
+						"minChange": -15,
+						"maxChange": -15
+					}
+				]
+			},
+			{
+				"description": "Kill Martin",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Hubert the Hermit",
+		"description": "A lone, hooded figure approaches your throne. His head hangs low, his face not visible. He speaks with a low, gruff voice.\n\"I live a simple life of solitude, my lord, out in the woods. However, recently some suspicious looking folk have been encroaching, getting nearer and nearer to my hermit hut. I fear that my way of life is threatened. Could you help?\"",
+		"choices": [
+			{
+				"description": "Set up a Hermit Conservation Zone",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -60,
+						"maxChange": -40
+					},
+					{
+						"field": "respect",
+						"minChange": 10,
+						"maxChange": 30
+					}
+				]
+			},
+			{
+				"description": "Arrest Hubert for living on your land without permission",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -15,
+						"maxChange": -5
+					},
+					{
+						"field": "respect",
+						"minChange": -30,
+						"maxChange": -10
+					}
+				]
+			},
+			{
+				"description": "Kill Hubert",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Polly the PR Specialist",
+		"description": "Your personal PR Specialist, who in the past has helped you out of some tight spots, arrives in your throne room.\n\"Having trouble pleasing the people, sire? Killed off too many peasants? Show me the gold and I can make all of your problems go away!\"",
+		"choices": [
+			{
+				"description": "Pay for some good publicity",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -150,
+						"maxChange": -150
+					},
+					{
+						"field": "love",
+						"minChange": 30,
+						"maxChange": 50
+					},
+					{
+						"field": "respect",
+						"minChange": 30,
+						"maxChange": 50
+					}
+				]
+			},
+			{
+				"description": "You don't need to pay an expert - your actions speak for themselves!",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -5,
+						"maxChange": 5
+					},
+					{
+						"field": "respect",
+						"minChange": -5,
+						"maxChange": 5
+					}
+				]
+			},
+			{
+				"description": "Kill Polly",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Bob the Baker",
+		"description": "The local baker, a jolly, plump man with an impressive handlebar moustache, approaches. His hands and apron are coated in a fine layer of flour and the homely aroma of freshly baked bread follows him.\n\"My lord, I'm sick and tired of baking bread all of the time. What I would love more than anything in the world is to move into French patisserie. Could you help?\"",
+		"choices": [
+			{
+				"description": "Send for the finest pastry chef in all of France to train Bob.",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -30,
+						"maxChange": -30
+					},
+					{
+						"field": "love",
+						"minChange": 15,
+						"maxChange": 25
+					},
+					{
+						"field": "respect",
+						"minChange": 10,
+						"maxChange": 15
+					}
+				]
+			},
+			{
+				"description": "Tell Bob that he's already good enough to produce fine pastries.",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 5,
+						"maxChange": 10
+					},
+					{
+						"field": "respect",
+						"minChange": 5,
+						"maxChange": 10
+					}
+				]
+			},
 			{
 				"description": "Kill Bob",
 				"consequences": [
 					{
-						"field": "money",
-						"minChange": 10,
-						"maxChange": 20
-					}
-				]
-			},
-			{
-				"description": "Save Bob",
-				"consequences": [
-					{
-						"field": "love",
-						"minChange": 30,
-						"maxChange": 35
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
 					}
 				]
 			}
 		]
 	},
 	{
-		"character": "Dave",
-		"description": "This is a test event, yay!",
+		"character": "Garfield the Gardener",
+		"description": "Your green-fingered gardener, who has been tending the castle gardens for as long as you can remember, comes forth. He seems unusually reserved, but after some prompting finally speaks up.\n\"Your majesty, I have worked tirelessly in these gardens for over 30 years, and have, as of yet, never taken a day of leave. However, my dear sweet wife Gertrude is ill, and I must look after her. Please may I have some time off?\"",
 		"choices": [
 			{
-				"description": "Kill Dave",
+				"description": "Allow Garfield to take as much leave as he requires, and pay for the finest physician to treat his wife",
 				"consequences": [
 					{
-						"field": "money",
-						"minChange": 10,
-						"maxChange": 20
+						"field": "gold",
+						"minChange": -40,
+						"maxChange": -40
+					},
+					{
+						"field": "love",
+						"minChange": 25,
+						"maxChange": 35
+					},
+					{
+						"field": "respect",
+						"minChange": 25,
+						"maxChange": 35
 					}
 				]
 			},
 			{
-				"description": "Save Dave",
+				"description": "Give Garfield a week off - after all, he deserves it!",
 				"consequences": [
 					{
 						"field": "love",
-						"minChange": 30,
-						"maxChange": 35
+						"minChange": 10,
+						"maxChange": 20
+					},
+					{
+						"field": "respect",
+						"minChange": 5,
+						"maxChange": 10
+					}
+				]
+			},
+			{
+				"description": "Kill Garfield",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Jim the Jester",
+		"description": "Silence prevails as your wonderful, hilarious, foolish, dim-witted jester stops dancing, the tiny bells on his hat coming to a rest. He coughs pronouncedly to get your attention.\n\"Beg your pardon, sire, but I can't help but feel that my outfit makes me look foolish and dim-witted. Would it be possible to dress me in an alternate attire?\"",
+		"choices": [
+			{
+				"description": "Buy Jim a new, more respectable outfit",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -15,
+						"maxChange": -15
+					},
+					{
+						"field": "love",
+						"minChange": 10,
+						"maxChange": 20
+					},
+					{
+						"field": "respect",
+						"minChange": 15,
+						"maxChange": 30
+					}
+				]
+			},
+			{
+				"description": "Ignore Jim - he's using big, long words that he doesn't even understand",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -15,
+						"maxChange": -5
+					},
+					{
+						"field": "respect",
+						"minChange": -20,
+						"maxChange": -5
+					}
+				]
+			},
+			{
+				"description": "Kill Jim",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Bertha the Butcher",
+		"description": "The local butcher, the most terrifying, formidable and imposing woman you've ever met, is at your threshold. As she tries to enter the throne room, her apron stained with dry blood and a cleaver in one hand, a basket in the other, your guards try to block her way, but you command them to let her pass. This woman supplies you with the finest sausages in the entire kingdom!\n\"Oi, I have that barbeque pack you asked for. I've got sausages, burgers, a couple of steaks and a few rashers of bacon.\"",
+		"choices": [
+			{
+				"description": "Thanks Bertha and pay her her due",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -25,
+						"maxChange": -25
+					},
+					{
+						"field": "love",
+						"minChange": 5,
+						"maxChange": 15
+					},
+					{
+						"field": "respect",
+						"minChange": 5,
+						"maxChange": 15
+					}
+				]
+			},
+			{
+				"description": "Take the barbeque pack as an offering and refuse to pay for it",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -15,
+						"maxChange": -5
+					},
+					{
+						"field": "respect",
+						"minChange": -20,
+						"maxChange": -10
+					}
+				]
+			},
+			{
+				"description": "Kill Bertha",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
 					}
 				]
 			}

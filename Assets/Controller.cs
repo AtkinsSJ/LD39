@@ -68,6 +68,9 @@ public class Controller : MonoBehaviour {
 	// Configuration
 	public int eventsToShowPerDay = 5;
 
+	// Status UI
+	public Text dayText;
+
 	// Court UI
 	public GameObject courtPanel;
 	public Text courtDescriptionText;
@@ -112,6 +115,7 @@ public class Controller : MonoBehaviour {
 	public void StartDay()
 	{
 		status.day++;
+		dayText.text = string.Format("Day {0}", status.day);
 
 		// ensure there are X events in the court today
 		while (courtEvents.Count < eventsToShowPerDay)
