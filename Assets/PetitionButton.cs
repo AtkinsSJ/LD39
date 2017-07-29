@@ -14,7 +14,7 @@ public class PetitionButton : MonoBehaviour
 		this.e = e;
 
 		GetComponentInChildren<Button>().onClick.AddListener(OnClicked);
-		GetComponentInChildren<Text>().text = e.character;
+		GetComponentInChildren<Text>().text = string.Format("{0} ({1} days)", e.character, e.daysWaited);
 	}
 
 	void OnClicked()

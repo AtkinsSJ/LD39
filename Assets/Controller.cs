@@ -19,11 +19,13 @@ public struct EventChoice
 }
 
 [System.Serializable]
-public struct Event
+public class Event
 {
 	public string character;
 	public string description;
 	public EventChoice[] choices;
+
+	public int daysWaited;
 }
 
 [System.Serializable]
@@ -53,7 +55,8 @@ public struct Status
 	}
 }
 
-public class Controller : MonoBehaviour {
+public class Controller : MonoBehaviour
+{
 
 	public Status status = new Status();
 
@@ -67,6 +70,7 @@ public class Controller : MonoBehaviour {
 
 	// Configuration
 	public int eventsToShowPerDay = 5;
+	public int daysPeopleWillWait = 2;
 
 	// Status UI
 	public Text dayText;
@@ -88,7 +92,7 @@ public class Controller : MonoBehaviour {
 	public GameObject choiceButtonsGroup;
 
 	// Use this for initialization
-	void Start ()
+	void Start()
 	{
 		var eventGuids = AssetDatabase.FindAssets("t:TextAsset", new string[] { "Assets/events" });
 		foreach (var guid in eventGuids)
@@ -121,6 +125,23 @@ public class Controller : MonoBehaviour {
 		status.day++;
 		dayText.text = string.Format("Day {0}", status.day);
 
+		List<Event> toDelete = new List<Event>(courtEvents.Count);
+
+		for (int i = 0; i < courtEvents.Count; i++)
+		{
+			courtEvents[i].daysWaited++;
+			if (courtEvents[i].daysWaited > daysPeopleWillWait)
+			{
+				toDelete.Add(courtEvents[i]);
+			}
+		}
+
+		foreach (var e in toDelete)
+		{
+			courtEvents.Remove(e);
+			seenEvents.Add(e);
+		}
+
 		// ensure there are X events in the court today
 		while (courtEvents.Count < eventsToShowPerDay)
 		{
@@ -128,6 +149,7 @@ public class Controller : MonoBehaviour {
 			{
 				//move random item to court
 				Event e = unseenEvents[Random.Range(0, unseenEvents.Count)];
+				e.daysWaited = 0;
 				unseenEvents.Remove(e);
 				courtEvents.Add(e);
 			}
@@ -184,8 +206,8 @@ public class Controller : MonoBehaviour {
 		{
 			GameObject.Destroy(oldButton.gameObject);
 		}
-		
-		for (int choiceIndex=0; choiceIndex < currentEvent.choices.Length; choiceIndex++)
+
+		for (int choiceIndex = 0; choiceIndex < currentEvent.choices.Length; choiceIndex++)
 		{
 			var choice = currentEvent.choices[choiceIndex];
 			var button = Instantiate(choiceButtonPrefab, choiceButtonsGroup.transform) as ChoiceButtonScript;
