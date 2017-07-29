@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public struct Consequence
 {
 	public string field;
-	public float minChange, maxChange;
+	public int minChange, maxChange;
 }
 
 [System.Serializable]
@@ -37,11 +37,11 @@ public struct EventArray
 public struct Status
 {
 	public int day;
-	public float money;
-	public float love;
-	public float respect;
+	public int money;
+	public int love;
+	public int respect;
 
-	public Status(float initialMoney = 100)
+	public Status(int initialMoney)
 	{
 		day = 0;
 		love = 0;
@@ -57,7 +57,7 @@ public struct Status
 
 public class Controller : MonoBehaviour
 {
-	public float initialMoney = 100;
+	public int initialMoney = 100;
 	private Status status;
 
 	public List<Event> allEvents = new List<Event>();
@@ -242,14 +242,15 @@ public class Controller : MonoBehaviour
 		ShowCourt();
 	}
 
-	float Adjust(float startValue, Consequence consequence)
+	int Adjust(int startValue, Consequence consequence)
 	{
-		float result = startValue;
+		int change = Random.Range(consequence.minChange, consequence.maxChange);
+		int result = startValue + change;
 
-		float adjustment = Random.Range(consequence.minChange, consequence.maxChange);
-
-		result += adjustment;
-
+		/*
+		Debug.Log(string.Format("Random range between {0} and {1} produced {2}. Original value {3}, now {4}",
+			consequence.minChange, consequence.maxChange, change, startValue, result));
+		*/	
 		return result;
 	}
 
