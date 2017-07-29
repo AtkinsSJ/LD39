@@ -1,0 +1,80 @@
+{ "events": [
+	{
+		"character": "Bill",
+		"description": "This is a test event, yay!",
+		"choices": [
+			{
+				"description": "Kill Bill",
+				"consequences": [
+					{
+						"field": "money",
+						"minChange": 10,
+						"maxChange": 20
+					}
+				]
+			},
+			{
+				"description": "Save Bill",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 30,
+						"maxChange": 35
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Bob",
+		"description": "This is a test event, yay!",
+		"choices": [
+			{
+				"description": "Kill Bob",
+				"consequences": [
+					{
+						"field": "money",
+						"minChange": 10,
+						"maxChange": 20
+					}
+				]
+			},
+			{
+				"description": "Save Bob",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 30,
+						"maxChange": 35
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Dave",
+		"description": "This is a test event, yay!",
+		"choices": [
+			{
+				"description": "Kill Dave",
+				"consequences": [
+					{
+						"field": "money",
+						"minChange": 10,
+						"maxChange": 20
+					}
+				]
+			},
+			{
+				"description": "Save Dave",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 30,
+						"maxChange": 35
+					}
+				]
+			}
+		]
+	}
+]}
