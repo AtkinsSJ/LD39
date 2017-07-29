@@ -34,11 +34,12 @@ public struct EventArray
 
 public class Controller : MonoBehaviour {
 	public List<Event> events = new List<Event>();
+	public Event currentEvent;
 
 	// UI stuff
 	public Text characterText;
 	public Text eventText;
-	public Button choiceButtonPrefab;
+	public ChoiceButtonScript choiceButtonPrefab;
 	public GameObject choiceButtonsGroup;
 
 	// Use this for initialization
@@ -57,21 +58,30 @@ public class Controller : MonoBehaviour {
 
 	public void ShowRandomEvent()
 	{
-		var e = events[Random.Range(0, events.Count)];
-		characterText.text = e.character;
-		eventText.text = e.description;
+		// TODO: We probably want some kind of random bucket system: at first we put all events in the bucket,
+		// then we take a random one out each time. This eliminates repeats until we've seen every event once.
+		// (Then we just swap the used/unused buckets.)
+		currentEvent = events[Random.Range(0, events.Count)];
+		characterText.text = currentEvent.character;
+		eventText.text = currentEvent.description;
 
 		foreach (Transform oldButton in choiceButtonsGroup.transform)
 		{
 			GameObject.Destroy(oldButton.gameObject);
 		}
 		
-		foreach (var choice in e.choices)
+		for (int choiceIndex=0; choiceIndex < currentEvent.choices.Length; choiceIndex++)
 		{
-			var button = Instantiate(choiceButtonPrefab, choiceButtonsGroup.transform) as Button;
-			button.GetComponentInChildren<UnityEngine.UI.Text>().text = choice.description;
+			var choice = currentEvent.choices[choiceIndex];
+			var button = Instantiate(choiceButtonPrefab, choiceButtonsGroup.transform) as ChoiceButtonScript;
+			button.Init(this, choice, choiceIndex);
 		}
+	}
 
+	public void OnChoiceSelected(int choiceIndex)
+	{
+		Debug.Log("Selected choice " + choiceIndex + "!");
+		ShowRandomEvent();
 	}
 	
 	// Update is called once per frame
