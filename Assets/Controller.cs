@@ -94,6 +94,8 @@ public class Controller : MonoBehaviour
 
 	// Game Over UI
 	public GameObject gameOverPanel;
+	public Text gameOverText;
+	string gameOverTextTemplate;
 
 	void ShowPanel(GameObject panelToShow)
 	{
@@ -114,6 +116,8 @@ public class Controller : MonoBehaviour
 			var loadedEvents = JsonUtility.FromJson<EventArray>(eventAsset.text);
 			allEvents.AddRange(loadedEvents.events);
 		}
+
+		gameOverTextTemplate = gameOverText.text;
 
 		BeginGame();
 	}
@@ -306,6 +310,7 @@ public class Controller : MonoBehaviour
 
 		if (weLost)
 		{
+			gameOverText.text = string.Format(gameOverTextTemplate, status.day);
 			ShowPanel(gameOverPanel);
 		}
 	}
