@@ -401,11 +401,8 @@ public class Controller : MonoBehaviour
 		for (int choiceIndex = 0; choiceIndex < currentEvent.choices.Length; choiceIndex++)
 		{
 			var choice = currentEvent.choices[choiceIndex];
-			if (CanAfford(choice))
-			{
-				var button = Instantiate(choiceButtonPrefab, choiceButtonsGroup.transform) as ChoiceButtonScript;
-				button.Init(this, choice, choiceIndex);
-			}
+			var button = Instantiate(choiceButtonPrefab, choiceButtonsGroup.transform) as ChoiceButtonScript;
+			button.Init(this, choice, choiceIndex, CanAfford(choice));
 		}
 
 		ShowPanel(eventPanel);
