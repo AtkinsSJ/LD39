@@ -73,6 +73,10 @@ public class Controller : MonoBehaviour
 	public int daysPeopleWillWait = 2;
 	public List<Consequence> consequencesForIgnoredPetition = new List<Consequence>();
 
+	// Main Menu etc UI
+	public GameObject mainMenuUI;
+	public GameObject gameUI;
+
 	// Status UI
 	public Text dayText;
 	public Text moneyText;
@@ -119,7 +123,8 @@ public class Controller : MonoBehaviour
 
 		gameOverTextTemplate = gameOverText.text;
 
-		BeginGame();
+		mainMenuUI.SetActive(true);
+		gameUI.SetActive(false);
 	}
 
 	public void BeginGame()
@@ -136,6 +141,9 @@ public class Controller : MonoBehaviour
 
 		StartDay();
 		UpdateUI();
+
+		mainMenuUI.SetActive(false);
+		gameUI.SetActive(true);
 	}
 
 	public void StartDay()
@@ -317,7 +325,8 @@ public class Controller : MonoBehaviour
 
 	public void OnRestartClicked()
 	{
-		BeginGame();
+		mainMenuUI.SetActive(true);
+		gameUI.SetActive(false);
 	}
 
 	void UpdateUI()
