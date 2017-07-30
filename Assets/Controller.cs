@@ -117,6 +117,8 @@ public class Controller : MonoBehaviour
 
 	// Court UI
 	public GameObject courtPanel;
+	public Text courtTitle;
+	string courtTitleTemplate;
 	public Text courtDescriptionText;
 	public PetitionButton petitionButtonPrefab;
 	public GameObject petitionButtonsGroup;
@@ -164,6 +166,7 @@ public class Controller : MonoBehaviour
 		moneyTextTemplate = moneyText.text;
 		taxTextTemplate = taxText.text;
 		newTaxTextTemplate = newTaxText.text;
+		courtTitleTemplate = courtTitle.text;
 
 		taxSlider.onValueChanged.AddListener(OnTaxSliderChanged);
 
@@ -192,7 +195,7 @@ public class Controller : MonoBehaviour
 	public void OnStartGameClicked()
 	{
 		string title = "King";
-		string name = "Royalpants the Third";
+		string name = "Royalpants";
 
 		if (nameInput.text.Length > 0)
 		{
@@ -204,6 +207,8 @@ public class Controller : MonoBehaviour
 		}
 
 		status = new Status(nameInput.text, title, initialMoney);
+
+		courtTitle.text = string.Format(courtTitleTemplate, status.title, status.name);
 
 		BeginGame();
 	}
