@@ -401,8 +401,11 @@ public class Controller : MonoBehaviour
 		for (int choiceIndex = 0; choiceIndex < currentEvent.choices.Length; choiceIndex++)
 		{
 			var choice = currentEvent.choices[choiceIndex];
-			var button = Instantiate(choiceButtonPrefab, choiceButtonsGroup.transform) as ChoiceButtonScript;
-			button.Init(this, choice, choiceIndex);
+			if (CanAfford(choice))
+			{
+				var button = Instantiate(choiceButtonPrefab, choiceButtonsGroup.transform) as ChoiceButtonScript;
+				button.Init(this, choice, choiceIndex);
+			}
 		}
 
 		ShowPanel(eventPanel);
@@ -447,6 +450,31 @@ public class Controller : MonoBehaviour
 		UpdateUI();
 	}
 
+	bool CanAfford(EventChoice choice)
+	{
+		bool result = true;
+
+		foreach (var consequence in choice.consequences)
+		{
+			if ((consequence.field == "money") || (consequence.field == "gold"))
+			{
+				if (consequence.minChange != consequence.maxChange)
+				{
+					Debug.LogError(string.Format("ERROR: We don't support randomised money consequences! {0} vs {1}", consequence.minChange, consequence.maxChange));
+				}
+				else
+				{
+					if ((status.money + consequence.minChange) < 0)
+					{
+						result = false;
+					}
+				}
+			}
+		}
+
+		return result;
+	}
+
 	void SufferTheConsequence(Consequence consequence)
 	{
 		switch (consequence.field)
@@ -486,7 +514,7 @@ public class Controller : MonoBehaviour
 			weLost = true;
 			lossReason = "Your rulership was so corrupt that your people revolted. Your head is currently displayed on a pole outside your former palace.";
 		}
-		if (status.money <= 0)
+		if (status.money < 0)
 		{
 			weLost = true;
 			lossReason = "When they discovered that your treasury is empty, all of your subjects left you.";
