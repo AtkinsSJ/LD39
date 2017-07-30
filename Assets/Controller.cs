@@ -256,6 +256,13 @@ public class Controller : MonoBehaviour
 		ShowPanel(taxesPanel);
 	}
 
+	public void OnSaveTaxesClicked()
+	{
+		status.dailyTax = (int)taxSlider.value;
+		UpdateUI();
+		ShowCourt();
+	}
+
 	public void ShowCourt()
 	{
 		// Now, init the court display
