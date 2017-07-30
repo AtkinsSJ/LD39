@@ -36,6 +36,7 @@ public struct EventArray
 
 public struct Status
 {
+	public bool gameOver;
 	public int day;
 	public int actionsLeftToday;
 	public int dailyTax;
@@ -45,6 +46,7 @@ public struct Status
 
 	public Status(int initialMoney)
 	{
+		gameOver = false;
 		day = 0;
 		love = 0;
 		respect = 0;
@@ -248,8 +250,15 @@ public class Controller : MonoBehaviour
 		status.love -= (int)lostLove;
 	}
 
+	public void OnNextDayClicked()
+	{
+		if (status.gameOver) return;
+		StartDay();
+	}
+
 	public void OnSetTaxesClicked()
 	{
+		if (status.gameOver) return;
 		taxSlider.minValue = minDailyTax;
 		taxSlider.maxValue = maxDailyTax;
 		taxSlider.value = status.dailyTax;
@@ -380,6 +389,7 @@ public class Controller : MonoBehaviour
 
 		if (weLost)
 		{
+			status.gameOver = true;
 			gameOverText.text = string.Format(gameOverTextTemplate, status.day);
 			ShowPanel(gameOverPanel);
 		}
