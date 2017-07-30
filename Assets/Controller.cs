@@ -34,6 +34,7 @@ public struct EventArray
 	public Event[] events;
 }
 
+[System.Serializable]
 public struct Status
 {
 	public string name;
@@ -69,13 +70,14 @@ public struct Status
 public class Controller : MonoBehaviour
 {
 	public int initialMoney = 100;
-	private Status status;
+	public Status status;
 
 	public List<Event> allEvents = new List<Event>();
 
 	public List<Event> unseenEvents = new List<Event>();
 	public List<Event> seenEvents = new List<Event>();
 	public List<Event> courtEvents = new List<Event>(); // events currently available as options
+	public List<Event> deadEvents = new List<Event>(); // events where you chose to kill them. you monster.
 
 	public Event currentEvent;
 
@@ -220,6 +222,7 @@ public class Controller : MonoBehaviour
 		unseenEvents.Clear();
 		seenEvents.Clear();
 		courtEvents.Clear();
+		deadEvents.Clear();
 
 		unseenEvents.AddRange(allEvents);
 
@@ -286,6 +289,15 @@ public class Controller : MonoBehaviour
 				// We're out of events! We have to stop looking.
 				break;
 			}
+		}
+
+		if (courtEvents.Count == 0)
+		{
+			// We still have no events even after lookig EVERWHERE!
+			// This means everyone must be dead. Oops.
+			ShowGameOverScreen("You killed every single person in the Kingdom. There's nobody left to grow food or defend you. You die sad and alone.");
+
+			return;
 		}
 
 		ShowCourt();
@@ -419,7 +431,15 @@ public class Controller : MonoBehaviour
 			SufferTheConsequence(consequence);
 		}
 
-		seenEvents.Add(currentEvent);
+		if (choice.description.StartsWith("Kill "))
+		{
+			deadEvents.Add(currentEvent);
+		}
+		else
+		{
+			seenEvents.Add(currentEvent);
+		}
+
 		status.actionsLeftToday--;
 
 		ShowCourt();
@@ -474,11 +494,16 @@ public class Controller : MonoBehaviour
 
 		if (weLost)
 		{
-			status.gameOver = true;
-			gameOverTitle.text = string.Format(gameOverTitleTemplate, status.title);
-			gameOverText.text = string.Format(gameOverTextTemplate, status.day, lossReason);
-			ShowPanel(gameOverPanel);
+			ShowGameOverScreen(lossReason);
 		}
+	}
+
+	void ShowGameOverScreen(string lossReason)
+	{
+		status.gameOver = true;
+		gameOverTitle.text = string.Format(gameOverTitleTemplate, status.title);
+		gameOverText.text = string.Format(gameOverTextTemplate, status.day, lossReason);
+		ShowPanel(gameOverPanel);
 	}
 
 	public void OnRestartClicked()

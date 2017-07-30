@@ -4949,10 +4949,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialMoney: 100
+  status:
+    name: 
+    title: 
+    gameOver: 0
+    day: 0
+    actionsLeftToday: 0
+    dailyTax: 0
+    money: 0
+    love: 0
+    respect: 0
   allEvents: []
   unseenEvents: []
   seenEvents: []
   courtEvents: []
+  deadEvents: []
   currentEvent:
     character: 
     description: 
