@@ -778,11 +778,6 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224315378817300352, guid: 07a93c18fff593e449fd349e198a3a3f,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 32
-      objectReference: {fileID: 0}
     - target: {fileID: 224812192771690314, guid: 07a93c18fff593e449fd349e198a3a3f,
         type: 2}
       propertyPath: m_AnchorMin.y
@@ -796,21 +791,11 @@ Prefab:
     - target: {fileID: 224812192771690314, guid: 07a93c18fff593e449fd349e198a3a3f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 42
+      value: 42.000015
       objectReference: {fileID: 0}
     - target: {fileID: 224812192771690314, guid: 07a93c18fff593e449fd349e198a3a3f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224812192771690314, guid: 07a93c18fff593e449fd349e198a3a3f,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 378.99997
-      objectReference: {fileID: 0}
-    - target: {fileID: 114095452014675098, guid: 07a93c18fff593e449fd349e198a3a3f,
-        type: 2}
-      propertyPath: m_ChildControlWidth
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2920,10 +2905,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -4212,10 +4197,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -5676,10 +5661,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
