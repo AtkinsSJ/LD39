@@ -79,7 +79,11 @@ public class Controller : MonoBehaviour
 
 	// Status UI
 	public Text dayText;
+	string dayTextTemplate;
+	public Text actionsText;
+	string actionsTextTemplate;
 	public Text moneyText;
+	string moneyTextTemplate;
 	public Slider loveSlider;
 	public Slider respectSlider;
 
@@ -122,6 +126,9 @@ public class Controller : MonoBehaviour
 		}
 
 		gameOverTextTemplate = gameOverText.text;
+		dayTextTemplate = dayText.text;
+		actionsTextTemplate = actionsText.text;
+		moneyTextTemplate = moneyText.text;
 
 		mainMenuUI.SetActive(true);
 		gameUI.SetActive(false);
@@ -149,7 +156,7 @@ public class Controller : MonoBehaviour
 	public void StartDay()
 	{
 		status.day++;
-		dayText.text = string.Format("Day {0}", status.day);
+		dayText.text = string.Format(dayTextTemplate, status.day);
 
 		List<Event> toDelete = new List<Event>(courtEvents.Count);
 
@@ -268,8 +275,6 @@ public class Controller : MonoBehaviour
 
 	public void OnChoiceSelected(int choiceIndex)
 	{
-		Debug.Log("Selected choice " + choiceIndex + "!");
-
 		courtEvents.Remove(currentEvent);
 
 		var choice = currentEvent.choices[choiceIndex];
@@ -333,7 +338,7 @@ public class Controller : MonoBehaviour
 	{
 		loveSlider.value = status.love;
 		respectSlider.value = status.respect;
-		moneyText.text = string.Format("Gold: {0}", status.money);
+		moneyText.text = string.Format(moneyTextTemplate, status.money);
 
 		CheckIfWeLost();
 	}
