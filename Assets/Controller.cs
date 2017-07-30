@@ -199,14 +199,14 @@ public class Controller : MonoBehaviour
 
 		if (nameInput.text.Length > 0)
 		{
-			status.name = nameInput.text;
+			name = nameInput.text;
 		}
 		foreach (var t in titleToggleGroup.ActiveToggles())
 		{
 			title = t.name;
 		}
 
-		status = new Status(nameInput.text, title, initialMoney);
+		status = new Status(name, title, initialMoney);
 
 		courtTitle.text = string.Format(courtTitleTemplate, status.title, status.name);
 
