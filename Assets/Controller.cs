@@ -38,6 +38,7 @@ public struct Status
 {
 	public int day;
 	public int actionsLeftToday;
+	public int dailyTax;
 	public int money;
 	public int love;
 	public int respect;
@@ -48,6 +49,7 @@ public struct Status
 		love = 0;
 		respect = 0;
 		actionsLeftToday = 0;
+		dailyTax = 15;
 		money = initialMoney;
 	}
 
@@ -74,6 +76,8 @@ public class Controller : MonoBehaviour
 	public int eventsToShowPerDay = 5;
 	public int actionsPerDay = 3;
 	public int daysPeopleWillWait = 2;
+	public int minDailyTax = 0, maxDailyTax = 50;
+	public int loveLostForMaxTax = 30;
 	public List<Consequence> consequencesForIgnoredPetition = new List<Consequence>();
 
 	// Main Menu etc UI
@@ -87,8 +91,16 @@ public class Controller : MonoBehaviour
 	string actionsTextTemplate;
 	public Text moneyText;
 	string moneyTextTemplate;
+	public Text taxText;
+	string taxTextTemplate;
 	public Slider loveSlider;
 	public Slider respectSlider;
+
+	// Taxes UI
+	public GameObject taxesPanel;
+	public Slider taxSlider;
+	public Text newTaxText;
+	string newTaxTextTemplate;
 
 	// Court UI
 	public GameObject courtPanel;
@@ -112,6 +124,7 @@ public class Controller : MonoBehaviour
 	{
 		courtPanel.SetActive(false);
 		eventPanel.SetActive(false);
+		taxesPanel.SetActive(false);
 		gameOverPanel.SetActive(false);
 
 		if (panelToShow) panelToShow.SetActive(true);
@@ -132,9 +145,18 @@ public class Controller : MonoBehaviour
 		dayTextTemplate = dayText.text;
 		actionsTextTemplate = actionsText.text;
 		moneyTextTemplate = moneyText.text;
+		taxTextTemplate = taxText.text;
+		newTaxTextTemplate = newTaxText.text;
+
+		taxSlider.onValueChanged.AddListener(OnTaxSliderChanged);
 
 		mainMenuUI.SetActive(true);
 		gameUI.SetActive(false);
+	}
+
+	void OnTaxSliderChanged(float newValue)
+	{
+		newTaxText.text = string.Format(newTaxTextTemplate, (int)newValue);
 	}
 
 	public void BeginGame()
@@ -158,6 +180,8 @@ public class Controller : MonoBehaviour
 
 	public void StartDay()
 	{
+		if (status.day != 0) CollectTaxes();
+
 		status.day++;
 		status.actionsLeftToday = actionsPerDay;
 		dayText.text = string.Format(dayTextTemplate, status.day);
@@ -213,6 +237,25 @@ public class Controller : MonoBehaviour
 		UpdateUI();
 	}
 
+	void CollectTaxes()
+	{
+		status.money += status.dailyTax;
+
+		float taxRange = maxDailyTax - minDailyTax;
+		float taxPercent = ((float)(status.dailyTax - minDailyTax)) / taxRange;
+		float lostLove = taxPercent * (float)loveLostForMaxTax;
+
+		status.love -= (int)lostLove;
+	}
+
+	public void OnSetTaxesClicked()
+	{
+		taxSlider.minValue = minDailyTax;
+		taxSlider.maxValue = maxDailyTax;
+		taxSlider.value = status.dailyTax;
+		ShowPanel(taxesPanel);
+	}
+
 	public void ShowCourt()
 	{
 		// Now, init the court display
@@ -264,11 +307,6 @@ public class Controller : MonoBehaviour
 		}
 
 		ShowPanel(eventPanel);
-	}
-
-	public void HideEvent()
-	{
-		ShowCourt();
 	}
 
 	int Adjust(int startValue, Consequence consequence)
@@ -350,6 +388,7 @@ public class Controller : MonoBehaviour
 	{
 		loveSlider.value = status.love;
 		respectSlider.value = status.respect;
+		taxText.text = string.Format(taxTextTemplate, status.dailyTax);
 		moneyText.text = string.Format(moneyTextTemplate, status.money);
 		actionsText.text = string.Format(actionsTextTemplate, status.actionsLeftToday);
 
