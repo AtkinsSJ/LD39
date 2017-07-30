@@ -336,7 +336,14 @@ public class Controller : MonoBehaviour
 
 		if (status.actionsLeftToday > 0)
 		{
-			courtDescriptionText.text = string.Format("There are {0} people waiting in your court.", courtEvents.Count);
+			if (courtEvents.Count == 1)
+			{
+				courtDescriptionText.text = string.Format("There is 1 person waiting in your court.");
+			}
+			else
+			{
+				courtDescriptionText.text = string.Format("There are {0} people waiting in your court.", courtEvents.Count);
+			}
 
 			foreach (var e in courtEvents)
 			{
@@ -346,7 +353,18 @@ public class Controller : MonoBehaviour
 		}
 		else
 		{
-			courtDescriptionText.text = string.Format("There are {0} people waiting in your court, but you are out of actions for today!", courtEvents.Count);
+			switch (courtEvents.Count)
+			{
+				case 0:
+					courtDescriptionText.text = string.Format("You are out of actions for today!");
+					break;
+				case 1:
+					courtDescriptionText.text = string.Format("There is 1 person waiting in your court, but you are out of actions for today!");
+					break;
+				default:
+					courtDescriptionText.text = string.Format("There are {0} people waiting in your court, but you are out of actions for today!", courtEvents.Count);
+					break;
+			}
 		}
 
 		ShowPanel(courtPanel);
