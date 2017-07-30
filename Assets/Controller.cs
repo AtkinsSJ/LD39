@@ -36,6 +36,9 @@ public struct EventArray
 
 public struct Status
 {
+	public string name;
+	public string title;
+
 	public bool gameOver;
 	public int day;
 	public int actionsLeftToday;
@@ -44,8 +47,10 @@ public struct Status
 	public int love;
 	public int respect;
 
-	public Status(int initialMoney)
+	public Status(string myName, string myTitle, int initialMoney)
 	{
+		title = myTitle;
+		name = myName;
 		gameOver = false;
 		day = 0;
 		love = 0;
@@ -86,7 +91,13 @@ public class Controller : MonoBehaviour
 	public GameObject mainMenuUI;
 	public GameObject gameUI;
 
+	// Game Setup UI
+	public GameObject gameSetupPanel;
+	public ToggleGroup titleToggleGroup;
+	public InputField nameInput;
+
 	// Status UI
+	public GameObject leftStuff, rightStuff;
 	public Text dayText;
 	string dayTextTemplate;
 	public Text actionsText;
@@ -119,11 +130,14 @@ public class Controller : MonoBehaviour
 
 	// Game Over UI
 	public GameObject gameOverPanel;
+	public Text gameOverTitle;
+	string gameOverTitleTemplate;
 	public Text gameOverText;
 	string gameOverTextTemplate;
 
 	void ShowPanel(GameObject panelToShow)
 	{
+		gameSetupPanel.SetActive(false);
 		courtPanel.SetActive(false);
 		eventPanel.SetActive(false);
 		taxesPanel.SetActive(false);
@@ -144,6 +158,7 @@ public class Controller : MonoBehaviour
 		}
 
 		gameOverTextTemplate = gameOverText.text;
+		gameOverTitleTemplate = gameOverTitle.text;
 		dayTextTemplate = dayText.text;
 		actionsTextTemplate = actionsText.text;
 		moneyTextTemplate = moneyText.text;
@@ -161,10 +176,40 @@ public class Controller : MonoBehaviour
 		newTaxText.text = string.Format(newTaxTextTemplate, (int)newValue);
 	}
 
+	public void OnPlayClicked()
+	{
+		ShowPanel(null);
+
+		mainMenuUI.SetActive(false);
+		gameUI.SetActive(true);
+
+		leftStuff.SetActive(false);
+		rightStuff.SetActive(false);
+
+		ShowPanel(gameSetupPanel);
+	}
+
+	public void OnStartGameClicked()
+	{
+		string title = "King";
+		string name = "Royalpants the Third";
+
+		if (nameInput.text.Length > 0)
+		{
+			status.name = nameInput.text;
+		}
+		foreach (var t in titleToggleGroup.ActiveToggles())
+		{
+			title = t.name;
+		}
+
+		status = new Status(nameInput.text, title, initialMoney);
+
+		BeginGame();
+	}
+
 	public void BeginGame()
 	{
-		status = new Status(initialMoney);
-
 		ShowPanel(null);
 
 		unseenEvents.Clear();
@@ -175,6 +220,9 @@ public class Controller : MonoBehaviour
 
 		StartDay();
 		UpdateUI();
+
+		leftStuff.SetActive(true);
+		rightStuff.SetActive(true);
 
 		mainMenuUI.SetActive(false);
 		gameUI.SetActive(true);
@@ -383,14 +431,29 @@ public class Controller : MonoBehaviour
 	{
 		bool weLost = false;
 
-		if (status.love <= -100) weLost = true;
-		if (status.respect <= -100) weLost = true;
-		if (status.money <= 0) weLost = true;
+		string lossReason = "";
+
+		if (status.love <= -100)
+		{
+			weLost = true;
+			lossReason = "Your people despise you so much that they overthrew you and had you executed. People were queuing up for hours to dance on your grave.";
+		}
+		if (status.respect <= -100)
+		{
+			weLost = true;
+			lossReason = "Your rulership was so corrupt that your people revolted. Your head is currently displayed on a pole outside your former palace.";
+		}
+		if (status.money <= 0)
+		{
+			weLost = true;
+			lossReason = "When they discovered that your treasury is empty, all of your subjects left you.";
+		}
 
 		if (weLost)
 		{
 			status.gameOver = true;
-			gameOverText.text = string.Format(gameOverTextTemplate, status.day);
+			gameOverTitle.text = string.Format(gameOverTitleTemplate, status.title);
+			gameOverText.text = string.Format(gameOverTextTemplate, status.day, lossReason);
 			ShowPanel(gameOverPanel);
 		}
 	}
