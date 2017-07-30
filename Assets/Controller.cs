@@ -393,7 +393,7 @@ public class Controller : MonoBehaviour
 		characterText.text = currentEvent.character;
 		eventText.text = currentEvent.description;
 
-		foreach (Transform oldButton in choiceButtonsGroup.transform)
+		foreach (ChoiceButtonScript oldButton in choiceButtonsGroup.GetComponentsInChildren<ChoiceButtonScript>())
 		{
 			GameObject.Destroy(oldButton.gameObject);
 		}
