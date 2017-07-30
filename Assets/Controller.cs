@@ -37,6 +37,7 @@ public struct EventArray
 public struct Status
 {
 	public int day;
+	public int actionsLeftToday;
 	public int money;
 	public int love;
 	public int respect;
@@ -46,6 +47,7 @@ public struct Status
 		day = 0;
 		love = 0;
 		respect = 0;
+		actionsLeftToday = 0;
 		money = initialMoney;
 	}
 
@@ -70,6 +72,7 @@ public class Controller : MonoBehaviour
 
 	// Configuration
 	public int eventsToShowPerDay = 5;
+	public int actionsPerDay = 3;
 	public int daysPeopleWillWait = 2;
 	public List<Consequence> consequencesForIgnoredPetition = new List<Consequence>();
 
@@ -156,6 +159,7 @@ public class Controller : MonoBehaviour
 	public void StartDay()
 	{
 		status.day++;
+		status.actionsLeftToday = actionsPerDay;
 		dayText.text = string.Format(dayTextTemplate, status.day);
 
 		List<Event> toDelete = new List<Event>(courtEvents.Count);
@@ -211,20 +215,26 @@ public class Controller : MonoBehaviour
 
 	public void ShowCourt()
 	{
-		// 
-
 		// Now, init the court display
-		courtDescriptionText.text = string.Format("There are {0} people waiting in your court.", courtEvents.Count);
 
 		foreach (Transform oldButton in petitionButtonsGroup.transform)
 		{
 			GameObject.Destroy(oldButton.gameObject);
 		}
 
-		foreach (var e in courtEvents)
+		if (status.actionsLeftToday > 0)
 		{
-			var button = Instantiate(petitionButtonPrefab, petitionButtonsGroup.transform) as PetitionButton;
-			button.Init(this, e);
+			courtDescriptionText.text = string.Format("There are {0} people waiting in your court.", courtEvents.Count);
+
+			foreach (var e in courtEvents)
+			{
+				var button = Instantiate(petitionButtonPrefab, petitionButtonsGroup.transform) as PetitionButton;
+				button.Init(this, e);
+			}
+		}
+		else
+		{
+			courtDescriptionText.text = string.Format("There are {0} people waiting in your court, but you are out of actions for today!", courtEvents.Count);
 		}
 
 		ShowPanel(courtPanel);
@@ -285,6 +295,8 @@ public class Controller : MonoBehaviour
 		}
 
 		seenEvents.Add(currentEvent);
+		status.actionsLeftToday--;
+
 		ShowCourt();
 
 		UpdateUI();
@@ -339,6 +351,7 @@ public class Controller : MonoBehaviour
 		loveSlider.value = status.love;
 		respectSlider.value = status.respect;
 		moneyText.text = string.Format(moneyTextTemplate, status.money);
+		actionsText.text = string.Format(actionsTextTemplate, status.actionsLeftToday);
 
 		CheckIfWeLost();
 	}
