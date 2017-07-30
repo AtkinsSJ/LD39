@@ -4,12 +4,12 @@
 		"description": "A local farmer, forlorn and dishevelled, pays you a visit. He looks exhausted.\n\"Yer majesty, my crops 'ave failed and I 'ave nothing to trade at market this year. I fear me family will starve this winter. Please, can ye 'elp a loyal subject?\"\nDo you want to compensate the farmer or ignore his plea for help?",
 		"choices": [
 			{
-				"description": "Compensate Fred",
+				"description": "Compensate Fred for 30 gold pieces",
 				"consequences": [
 					{
 						"field": "gold",
-						"minChange": -50,
-						"maxChange": -20
+						"minChange": -30,
+						"maxChange": -30
 					},
 					{
 						"field": "love",
@@ -50,7 +50,7 @@
 		"description": "Your regular milkman, out on his daily rounds, comes to deliver your usual two pints of fresh, creamy milk.\n\"Here you go, sire, your usual. That will be 20 gold pieces.\"",
 		"choices": [
 			{
-				"description": "Pay Martin",
+				"description": "Pay Martin 20 gold pieces for your milk",
 				"consequences": [
 					{
 						"field": "gold",
@@ -91,17 +91,17 @@
 		"description": "A lone, hooded figure approaches your throne. His head hangs low, his face not visible. He speaks with a low, gruff voice.\n\"I live a simple life of solitude, my lord, out in the woods. However, recently some suspicious looking folk have been encroaching, getting nearer and nearer to my hermit hut. I fear that my way of life is threatened. Could you help?\"",
 		"choices": [
 			{
-				"description": "Set up a Hermit Conservation Zone",
+				"description": "Set up a Hermit Conservation Zone for 60 gold pieces",
 				"consequences": [
 					{
 						"field": "gold",
 						"minChange": -60,
-						"maxChange": -40
+						"maxChange": -60
 					},
 					{
 						"field": "respect",
-						"minChange": 10,
-						"maxChange": 30
+						"minChange": 20,
+						"maxChange": 35
 					}
 				]
 			},
@@ -137,7 +137,7 @@
 		"description": "Your personal PR Specialist, who in the past has helped you out of some tight spots, arrives in your throne room.\n\"Having trouble pleasing the people, sire? Killed off too many peasants? Show me the gold and I can make all of your problems go away!\"",
 		"choices": [
 			{
-				"description": "Pay for some good publicity",
+				"description": "Pay 150 gold pieces for some good publicity",
 				"consequences": [
 					{
 						"field": "gold",
@@ -188,7 +188,7 @@
 		"description": "The local baker, a jolly, plump man with an impressive handlebar moustache, approaches. His hands and apron are coated in a fine layer of flour and the homely aroma of freshly baked bread follows him.\n\"My lord, I'm sick and tired of baking bread all of the time. What I would love more than anything in the world is to move into French patisserie. Could you help?\"",
 		"choices": [
 			{
-				"description": "Send for the finest pastry chef in all of France to train Bob.",
+				"description": "Send for the finest pastry chef in all of France to train Bob, a bargain at only 30 gold pieces!",
 				"consequences": [
 					{
 						"field": "gold",
@@ -239,7 +239,7 @@
 		"description": "Your green-fingered gardener, who has been tending the castle gardens for as long as you can remember, comes forth. He seems unusually reserved, but after some prompting finally speaks up.\n\"Your majesty, I have worked tirelessly in these gardens for over 30 years, and have, as of yet, never taken a day of leave. However, my dear sweet wife Gertrude is ill, and I must look after her. Please may I have some time off?\"",
 		"choices": [
 			{
-				"description": "Allow Garfield to take as much leave as he requires, and pay for the finest physician to treat his wife",
+				"description": "Allow Garfield to take as much leave as he requires, and pay 40 gold pieces for the finest physician to treat his wife",
 				"consequences": [
 					{
 						"field": "gold",
@@ -290,7 +290,7 @@
 		"description": "Silence prevails as your wonderful, hilarious, foolish, dim-witted jester stops dancing, the tiny bells on his hat coming to a rest. He coughs pronouncedly to get your attention.\n\"Beg your pardon, sire, but I can't help but feel that my outfit makes me look foolish and dim-witted. Would it be possible to dress me in an alternate attire?\"",
 		"choices": [
 			{
-				"description": "Buy Jim a new, more respectable outfit",
+				"description": "Buy Jim a new, more respectable outfit for a mere 15 gold pieces",
 				"consequences": [
 					{
 						"field": "gold",
@@ -341,7 +341,7 @@
 		"description": "The local butcher, the most terrifying, formidable and imposing woman you've ever met, is at your threshold. As she tries to enter the throne room, her apron stained with dry blood and a cleaver in one hand, a basket in the other, your guards try to block her way, but you command them to let her pass. This woman supplies you with the finest sausages in the entire kingdom!\n\"Oi, I have that barbeque pack you asked for. I've got sausages, burgers, a couple of steaks and a few rashers of bacon.\"",
 		"choices": [
 			{
-				"description": "Thanks Bertha and pay her her due",
+				"description": "Thank Bertha and pay her her due of 25 gold pieces",
 				"consequences": [
 					{
 						"field": "gold",
@@ -377,6 +377,1131 @@
 			},
 			{
 				"description": "Kill Bertha",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Charles the Chaplain",
+		"description": "A much loved and respected member of the community, Charles the Chaplain can usually be found residing in the castle chapel. Today, however, he has come to you with a plea close to his heart.\n\"Sire, our chapel's Bibles are old and worn. They are in dire need of replacing. Please, could you allocate the funds for me to purchase a new set of Bibles?\"",
+		"choices": [
+			{
+				"description": "Give Charles 50 gold pieces for the Bibles",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -50,
+						"maxChange": -50
+					},
+					{
+						"field": "love",
+						"minChange": 20,
+						"maxChange": 30
+					},
+					{
+						"field": "respect",
+						"minChange": 20,
+						"maxChange": 30
+					}
+				]
+			},
+			{
+				"description": "Find a new chaplain who won't make such unreasonable demands",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -30,
+						"maxChange": -15
+					},
+					{
+						"field": "respect",
+						"minChange": -35,
+						"maxChange": -20
+					}
+				]
+			},
+			{
+				"description": "Kill Charles",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Chesley the Chamberlain",
+		"description": "Chesley the Chamberlain is your most trusted member of staff, the man in charge of all domestic affairs at the castle. Usually, he is an exceedingly capable man, and it is only on the rarest of occasions that he feels the need to bother you. Today is such an occasion, and he enters the throne room in a hurry, a stern look of worry upon his face.\n\"Your majesty, pardon my intrusion, but I have a matter I need to discuss with you. One of your servants, a young maid by the name of Mildred, has been caught trying to steal some of our silverware. What would you like me to do?\"",
+		"choices": [
+			{
+				"description": "Let Mildred off with a warning",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 10,
+						"maxChange": 30
+					},
+					{
+						"field": "respect",
+						"minChange": -5,
+						"maxChange": 5
+					}
+				]
+			},
+			{
+				"description": "Execute Mildred as a warning to other potential thieves",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -30,
+						"maxChange": -15
+					},
+					{
+						"field": "respect",
+						"minChange": -10,
+						"maxChange": -5
+					}
+				]
+			},
+			{
+				"description": "Kill Chesley",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Michael the Merchant",
+		"description": "The joy of being the ruler of such a wealthy and prosperous nation is that endless people desire to trade with you. One such individual is Michael the Merchant, who has come to show off his range of 'quality' goods.\n\"Good day, good day! I come to you with a real bargain, my lord! Would you like to buy one of these authentic Rolex watches for a mere 40 gold pieces?\"",
+		"choices": [
+			{
+				"description": "Buy an 'authentic' Rolex watch for 40 gold pieces",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -40,
+						"maxChange": -40
+					},
+					{
+						"field": "love",
+						"minChange": 15,
+						"maxChange": 35
+					},
+					{
+						"field": "respect",
+						"minChange": -20,
+						"maxChange": -10
+					}
+				]
+			},
+			{
+				"description": "Send Michael on his way so that he can try to work his charm on some other mug",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -15,
+						"maxChange": -5
+					},
+					{
+						"field": "respect",
+						"minChange": 10,
+						"maxChange": 20
+					}
+				]
+			},
+			{
+				"description": "Kill Michael",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Hatty the Hunter",
+		"description": "Living in such luscious lands means that a plethora of animals abide. Many local people making their livings from hunting the various animals that live in the woodland and beyond. Hatty, a highly skilled and experienced hunter, has come to sell you her daily catch.\n\"My lord, I have some magnificent wild boar for you today, freshly caught this very morning. Would you be interested in purchasing one? It would make a most splendid centrepiece at a dinner party!\"",
+		"choices": [
+			{
+				"description": "Buy a boar for 25 gold pieces",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -25,
+						"maxChange": -25
+					},
+					{
+						"field": "love",
+						"minChange": 10,
+						"maxChange": 20
+					},
+					{
+						"field": "respect",
+						"minChange": 10,
+						"maxChange": 20
+					}
+				]
+			},
+			{
+				"description": "Throw Hatty in the dungeons for killing your boar without permission and take her earnings",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": 50,
+						"maxChange": 70
+					},
+					{
+						"field": "love",
+						"minChange": -25,
+						"maxChange": -10
+					},
+					{
+						"field": "respect",
+						"minChange": -30,
+						"maxChange": -10
+					}
+				]
+			},
+			{
+				"description": "Kill Hatty",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Wendy the Wife",
+		"description": "You barely have time to see your wife any more, as you seem to spend more and more of your life dealing with the trivial matters of the proletariat. Indeed, as your wife initially steps forth to speak with you, you fail to recognise her. You don't remember her having blue eyes...\n\"Dearest, I'm sorry to bother you whilst you are working, but it is our son's birthday soon, and I was wondering what you would like to do to mark the occasion? He'll be 8, by the way, just in case you'd forgotten...\"",
+		"choices": [
+			{
+				"description": "Spend 60 gold pieces to arrange the most spectacular party the kingdom has ever seen. He is your heir, after all!",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -60,
+						"maxChange": -60
+					},
+					{
+						"field": "love",
+						"minChange": 30,
+						"maxChange": 40
+					},
+					{
+						"field": "respect",
+						"minChange": 20,
+						"maxChange": 35
+					}
+				]
+			},
+			{
+				"description": "Buy him a puppy for 10 gold pieces and let that be it. These are testing times, after all!",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -10,
+						"maxChange": -10
+					},
+					{
+						"field": "love",
+						"minChange": 5,
+						"maxChange": 10
+					},
+					{
+						"field": "respect",
+						"minChange": -20,
+						"maxChange": -5
+					}
+				]
+			},
+			{
+				"description": "Kill Wendy",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Spencer the Son",
+		"description": "A small boy approaches. He looks weak and frail, and you pity the parents of such a pathetic, lowly sprat. As the boy comes closer, you realise that he is in fact Spencer, your son. You hastily retract your previous thoughts. My, what a strong, handsome and magnificent lad he is!\n\"Father, I want to learn how to play with swords. They look like so much fun. Please, may I?\"",
+		"choices": [
+			{
+				"description": "Give Spencer a training sword to play with. He'll make a warrior yet!",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 15,
+						"maxChange": 30
+					},
+					{
+						"field": "respect",
+						"minChange": -20,
+						"maxChange": -5
+					}
+				]
+			},
+			{
+				"description": "Refuse Spencer's request. Swords are not toys. Anyway, he doesn't look strong enough to even lift a sword!",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -25,
+						"maxChange": -10
+					},
+					{
+						"field": "respect",
+						"minChange": 5,
+						"maxChange": 20
+					}
+				]
+			},
+			{
+				"description": "Kill Spencer",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Dorothy the Daughter",
+		"description": "Your sweet, innocent daughter toddles up to you. Oh, the be a child again... She knows nothing of the pains of love, death or taxes. Dorothy has her mother's eyes and your determined and adventurous spirit. Who else would dare approach the king without an appointment? Speaking of not having an appointment, where is Dorothy's nanny?",
+		"choices": [
+			{
+				"description": "Pick up Dorothy and give her a cuddle. Who cares where the nanny is?",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 20,
+						"maxChange": 40
+					},
+					{
+						"field": "respect",
+						"minChange": -10,
+						"maxChange": 10
+					}
+				]
+			},
+			{
+				"description": "Arrest the nanny and throw her in the dungeons for neglecting her duties",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -20,
+						"maxChange": -5
+					}
+				]
+			},
+			
+			{
+				"description": "Kill the nanny",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Boris the Bloodhound",
+		"description": "They say that a dog is a man's best friend, and how right they are! Boris, your trusty bloodhound, has been at your side since your coronation, and has stuck by you through even the most difficult decisions, never criticising, never judging. He is the perfect companion!",
+		"choices": [
+			{
+				"description": "Give Boris a stroke behind the ears, just where he likes it",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 10,
+						"maxChange": 25
+					}
+				]
+			},
+			{
+				"description": "Give Boris the chicken drumstick that you have left over from your lunch",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 15,
+						"maxChange": 30
+					},
+					{
+						"field": "respect",
+						"minChange": 0,
+						"maxChange": 10
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Boris",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Meryl the Mother-in-Law",
+		"description": "It is an unwritten law that every man must despise his mother-in-law, and yet in the case of Meryl, no law - written or unwritten - is necessary. She is a sly, mischievous creature who can't be trusted. Why oh why did you agree to let her stay in your castle?\n\"Hey, king! It's awful lonely being a widow, all alone in this big, empty castle. I demand that you find me a suitor!\"",
+		"choices": [
+			{
+				"description": "Empty? There are men absolutely everywhere! Meryl can find her own husband!",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -10,
+						"maxChange": 10
+					},
+					{
+						"field": "respect",
+						"minChange": -20,
+						"maxChange": -5
+					}
+				]
+			},
+			{
+				"description": "Set up a date for Meryl with some poor fool from the dungeons. That should keep her quiet.",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -20,
+						"maxChange": 20
+					},
+					{
+						"field": "respect",
+						"minChange": -20,
+						"maxChange": 20
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Meryl",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": 5,
+						"maxChange": 25
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Mortimer the Marshal",
+		"description": "Mortimer, the head of your army, rushes in. He is clad from head to toe in iron armour, and the very fact that he is able to rush anywhere is a glowing testament to his fortitude. Almost as an afterthought, he swiftly removes his helmet as he steps up to you.\n\"Your majesty, those curs from the neighbouring kingdom are lining their forces up along our border. I fear they mean to invade! What would you have me do?\"",
+		"choices": [
+			{
+				"description": "Rally the troops - we're going to war! It will cost 60 gold pieces, mind!",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -60,
+						"maxChange": -60
+					},
+					{
+						"field": "love",
+						"minChange": -30,
+						"maxChange": -10
+					},
+					{
+						"field": "respect",
+						"minChange": -30,
+						"maxChange": 30
+					}
+				]
+			},
+			{
+				"description": "Dispatch a diplomat in the hope of a peaceful resolution",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 10,
+						"maxChange": 30
+					},
+					{
+						"field": "respect",
+						"minChange": -30,
+						"maxChange": 30
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Mortimer",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Danny the Diplomat",
+		"description": "Diplomacy is such a bore! Unfortunately, when you are the ruler of a kingdom things can very easily go sour with neighbouring kingdoms. Ususally your legion of diplomats are able to deal with most issues, but every so often there is a matter that requires your personal attention, such as when diplomats visit from other kingdoms. Danny is one such diplomat, although you haven't the foggiest where he's come from...\n\"Good day to you, your majesty. I have come from a far away kingdom in the hope of setting up a trade deal between our two great nations.  What do you say?\"",
+		"choices": [
+			{
+				"description": "Sharing is caring - let's trade!",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": 40,
+						"maxChange": 40
+					},
+					{
+						"field": "respect",
+						"minChange": 10,
+						"maxChange": 25
+					}
+				]
+			},
+			{
+				"description": "Your kingdom is by far the wealthiest and most prosperous - you have no need to trade!",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": 30,
+						"maxChange": 50
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Danny",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Donald the Diplomat",
+		"description": "An old, bearded man approaches. You can easily identify him as a diplomat from his fine silk robes and the silly hat that sits atop his head. Furthermore, he possesses an impressive beard, as any diplomat worth his weight in salt should. Sometimes you feel like it is really diplomats who are ruling the world. You make a mental note to yourself to draft a law outlawing all diplomats. That will show them who's boss!\n\"Sire, my lord, who, as you know, has been very generous to you in the past, is waging a war and requests assistance. He requires both gold and troops if there is even the slightest of chances that we might win.\"",
+		"choices": [
+			{
+				"description": "Give 50 gold pieces and send as many soldiers as you can spare to fight your ally's war",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -50,
+						"maxChange": -50
+					},
+					{
+						"field": "love",
+						"minChange": -35,
+						"maxChange": -20
+					},
+					{
+						"field": "respect",
+						"minChange": 20,
+						"maxChange": 40
+					}
+				]
+			},
+			{
+				"description": "Send the soliders but keep the gold - money doesn't grow on trees, you know!",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -25,
+						"maxChange": -10
+					},
+					{
+						"field": "respect",
+						"minChange": 10,
+						"maxChange": 30
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Donald",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Desmond the Diplomat",
+		"description": "As Desmond the Diplomat nears, you wonder whether all boys whose names begin with the letter 'D' are destined for careers in diplomacy...\n\"Your majesty, my good lord demands a payment of 80 gold pieces, or else he threatens to spread a rumour that you are a eunuch!\"",
+		"choices": [
+			{
+				"description": "Pay 80 gold pieces to maintain your dignity",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -80,
+						"maxChange": -80
+					},
+					{
+						"field": "respect",
+						"minChange": -10,
+						"maxChange": -10
+					}
+				]
+			},
+			{
+				"description": "That makes no sense - you have two children! Refuse to submit to this scandalous attempt at blackmail",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -10,
+						"maxChange": -5
+					},
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -10
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Desmond",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Bertie the Bard",
+		"description": "You tune in to the background music, which has been playing near-constantly for as long as you can remember. Man, it is an awful racket! The lute - what an instrument! No bard, in the history of bardship, has ever made a lute sound good, which begs the question as to why it is the bard's chosen instrument? Bards sing songs of brave and honourable heroes - if only they could actually play good music...",
+		"choices": [
+			{
+				"description": "Dismiss Bertie and crack out your dusty boombox - everybody will thank you... except perhaps Bertie",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 20,
+						"maxChange": 40
+					},
+					{
+						"field": "respect",
+						"minChange": 5,
+						"maxChange": 20
+					}
+				]
+			},
+			{
+				"description": "Allow Bertie to continue to play, but make him pay you for the privilege",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": 15,
+						"maxChange": 15
+					},
+					{
+						"field": "respect",
+						"minChange": -15,
+						"maxChange": -15
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Bertie",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Simon the Sword-for-Hire",
+		"description": "Your army is the finest in all the kingdoms, due in part to the rigorous training programme imposed by Mortimer the Marshal. Despite this, there remain individuals who just grab a sword and some old, rusty armour and pronounce themselves 'swords-for-hire'. Simon represents all that is wrong with the world - he helps other people, but only for his own profit!\n \"I'm a top-rate monster slayer, your majesty. Any monsters you need slaying? I can bring you their 'eads, eyes, tongues, tails, wings, claws - whatever you want!\"",
+		"choices": [
+			{
+				"description": "Pay 40 gold pieces and send Simon on a long and dangerous quest to deal with that minotaur that's been bothering you for the past couple of years, but which you previously chose to ignore in the hope that it would simply disappear",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -40,
+						"maxChange": -40
+					},
+					{
+						"field": "respect",
+						"minChange": 20,
+						"maxChange": 35
+					}
+				]
+			},
+			{
+				"description": "Arrest Simon for slaying monsters without the correct paperwork",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -15,
+						"maxChange": -5
+					},
+					{
+						"field": "respect",
+						"minChange": -15,
+						"maxChange": -5
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Simon",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Gary the Greengrocer",
+		"description": "You always do your best to eat your 5-a-day, and sometimes you go to the trouble of having 6, just to be on the safe side. Your ally in this is Gary, the finest greengrocer ever to have walked the Earth, capable of acquiring any fruit or vegetable you could think to ask for. Just don't ask him how he does it!\n\"Sire, there are some terribly hungry looking wolves prowling around my orchard, and I don't feel safe to go there to pick my gloriously sweet, crunchy, juicy apples (only 1 gold piece each!) Please, could you send some soldiers down there to deal with the wolves for me? I'm sure I can make it worth your while!\"",
+		"choices": [
+			{
+				"description": "Send two soldiers to the orchard to deal with the wolves",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 15,
+						"maxChange": 35
+					},
+					{
+						"field": "respect",
+						"minChange": 15,
+						"maxChange": 35
+					}
+				]
+			},
+			{
+				"description": "Demand a payment from Gary, then send a lone soldier to the orchard to complete the job",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": 10,
+						"maxChange": 10
+					},
+					{
+						"field": "love",
+						"minChange": -5,
+						"maxChange": 15
+					},
+					{
+						"field": "respect",
+						"minChange": -10,
+						"maxChange": 10
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Gary",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Colin the Candlestick Maker",
+		"description": "Colin the Candlestick Maker, you have to admit, looks an awful lot like a candlestick himself: he's an incredibly tall and slim chap, and his amusing orange quiff somewhat resembles a flame. You laugh to yourself as he comes forth.\n\"Good day, my lord. I'm sorry to bother you, but I was wondering if I could borrow those wonderous candlesticks that I made for you last month? Only, my mother-in-law is visiting this weekend and I could really do with something to brighten up my house and impress her, and I cannot make more as I don't have the raw materials required. What do you say?\"",
+		"choices": [
+			{
+				"description": "You understand the horrors of the mother-in-law better than most - lend the candlesticks to Colin, along with your best wishes",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 25,
+						"maxChange": 45
+					},
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -10
+					}
+				]
+			},
+			{
+				"description": "You feel Colin's pain, but those candlesticks are currently doing a great job earning you the respect of the bourgeoisie. If you lose them, even temporarily, your reputation would be at stake!",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -20,
+						"maxChange": -5
+					},
+					{
+						"field": "respect",
+						"minChange": 25,
+						"maxChange": 40
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Colin",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Charlotte the Chef",
+		"description": "Charlotte, your head chef, is in charge of baking a magnificent cake for your son's upcoming birthday, along with a vast and varied birthday feast. This special occasion has been in the making for several months, and it cost a great deal to acquire the rare and splendid elements required to bring it all together. She comes to you now with a problem: there is no truffle oil in the castle!",
+		"choices": [
+			{
+				"description": "Send Charlotte our with Pansie the Pig to fund some wild truffles to use",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 5,
+						"maxChange": 20
+					},
+					{
+						"field": "respect",
+						"minChange": -20,
+						"maxChange": -5
+					}
+				]
+			},
+			{
+				"description": "Give Charlotte 20 gold pieces, with which to acquire the finest truffle oil - nothing is too good for your son!",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -20,
+						"maxChange": -20
+					},
+					{
+						"field": "love",
+						"minChange": 15,
+						"maxChange": 30
+					},
+					{
+						"field": "respect",
+						"minChange": 20,
+						"maxChange": 30
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Charlotte",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Terrence the Tailor",
+		"description": "As king, you wear only the finest silks, and set new and bold fashion trends that are quickly adopted by the bourgeoisie in their pitiful attempts to please you. Your personal tailor, Terrence, plays a crucial role in this, bringing exciting new materials to dress you in. On this occasion, he has just finished fitting you for a beautiful cloak of crimson red, made from the silk of free range silk worms from the Far East.",
+		"choices": [
+			{
+				"description": "Pay Terrence 25 gold pieces for the cloak and send him on his way",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -25,
+						"maxChange": -25
+					},
+					{
+						"field": "love",
+						"minChange": 20,
+						"maxChange": 35
+					},
+					{
+						"field": "respect",
+						"minChange": 20,
+						"maxChange": 35
+					}
+				]
+			},
+			{
+				"description": "Ignoring his demands for payment, thank Terrence for his fine gift and send him on his way",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -10,
+						"maxChange": 10
+					},
+					{
+						"field": "respect",
+						"minChange": 20,
+						"maxChange": 35
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Terrence",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Christoph the Cobbler",
+		"description": "Every heard the saying, 'An army marches on its stomach'? Well, actually an army marches on its boots. You don't want your soldiers all getting blisters, gangrene, athelete's foot, or some other foot-related problems. Christoph sorts all that for you with his expertly-made boots. He comes to you today, however, as you have commissioned him to make new boots for the men in your barracks.",
+		"choices": [
+			{
+				"description": "Pay Christoph 100 gold pieces to make the finest leather boots that will serve your men well",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -100,
+						"maxChange": -100
+					},
+					{
+						"field": "love",
+						"minChange": 30,
+						"maxChange": 50
+					},
+					{
+						"field": "respect",
+						"minChange": 40,
+						"maxChange": 50
+					}
+				]
+			},
+			{
+				"description": "Pay Christoph 25 gold pieces to make boots using some slightly dodgy material that you found around the back of the castle. It's not like you're going to be wearing the boots!",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -25,
+						"maxChange": -25
+					},
+					{
+						"field": "love",
+						"minChange": -25,
+						"maxChange": -15
+					},
+					{
+						"field": "respect",
+						"minChange": -30,
+						"maxChange": -15
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Christoph",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Fiona the Florist",
+		"description": "Upset your wife by forgetting your wedding anniversary? Buy her some flowers! Argued about whether her corset makes her bum look big? Buy her some flowers! Got a sneaking suspicion that your wife is annoyed at you but not sure why? Buy her some flowers! But which flowers will you buy from Fiona, the finest florest ever to arrange flowers?",
+		"choices": [
+			{
+				"description": "Pay Fiona 30 gold pieces for a beautiful bouquet of bright red roses - the perfect romantic gesture!",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -30,
+						"maxChange": -30
+					},
+					{
+						"field": "love",
+						"minChange": 20,
+						"maxChange": 40
+					}
+				]
+			},
+			{
+				"description": "Pay Fiona 15 gold pieces for a bouquet of lilies. Lilies are pretty, right? They certaintly don't have any negative connotations...",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -15,
+						"maxChange": -15
+					},
+					{
+						"field": "love",
+						"minChange": -10,
+						"maxChange": -10
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Fiona",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Paul the Postman",
+		"description": "With a castle full of people, you can't help but wonder how you managed to miss a parcel delivery last week. Thankfully, Paul the Postman has come to redeliver the parcel. However, there is a handling charge imposed by the post office!",
+		"choices": [
+			{
+				"description": "Pay Paul the handling charge of 10 gold pieces for your parcel",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -10,
+						"maxChange": -10
+					},
+					{
+						"field": "respect",
+						"minChange": 0,
+						"maxChange": 10
+					}
+				]
+			},
+			{
+				"description": "Refuse to pay the handling charge and take your parcel by force if need be",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -15,
+						"maxChange": -5
+					},
+					{
+						"field": "respect",
+						"minChange": -20,
+						"maxChange": -10
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Paul",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Manfred the Manservant",
+		"description": "One ofthe many perks of being a ruler is that you have a plethora of servants at your command. On occasion, however, they can be quite demanding. Manfred comes up to you, a little too boldly and brashly.\n\"Your highness, I'm hoping to take the wife and children to the coast for a little getaway at the end of the month, but I noticed on the calendar that Megan the Maid is also due to be away then. Speaking man to man, do you think that you could... swap things around so that I can go on my holiday?\"",
+		"choices": [
+			{
+				"description": "Juggle the calendar so that Manfred can go on his holiday but Megan cannot",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -20,
+						"maxChange": 20
+					},
+					{
+						"field": "respect",
+						"minChange": -20,
+						"maxChange": 20
+					}
+				]
+			},
+			{
+				"description": "Refuse Manfred's request - Megan booked her holiday first and you're no misogynist!",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -10,
+						"maxChange": 10
+					},
+					{
+						"field": "respect",
+						"minChange": 10,
+						"maxChange": 20
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Manfred",
 				"consequences": [
 					{
 						"field": "respect",
