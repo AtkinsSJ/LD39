@@ -94,6 +94,8 @@ public class Controller : MonoBehaviour
 
 	// Game Setup UI
 	public GameObject gameSetupPanel;
+	public Text instructionsText;
+	string instructionsTextTemplate;
 	public ToggleGroup titleToggleGroup;
 	public InputField nameInput;
 
@@ -183,6 +185,7 @@ public class Controller : MonoBehaviour
 		taxTextTemplate = taxText.text;
 		newTaxTextTemplate = newTaxText.text;
 		courtTitleTemplate = courtTitle.text;
+		instructionsTextTemplate = instructionsText.text;
 
 		taxSlider.onValueChanged.AddListener(OnTaxSliderChanged);
 
@@ -204,6 +207,8 @@ public class Controller : MonoBehaviour
 
 		leftStuff.SetActive(false);
 		rightStuff.SetActive(false);
+
+		instructionsText.text = string.Format(instructionsTextTemplate, actionsPerDay, daysPeopleWillWait);
 
 		ShowPanel(gameSetupPanel);
 	}

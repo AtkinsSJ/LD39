@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.32156864, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1961,7 +1961,7 @@ Prefab:
     - target: {fileID: 224030976968827500, guid: 51eab01d54e729b4cad37059432271c9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -535
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224030976968827500, guid: 51eab01d54e729b4cad37059432271c9,
         type: 2}
@@ -2050,7 +2050,7 @@ Prefab:
     - target: {fileID: 224807237703710298, guid: 51eab01d54e729b4cad37059432271c9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224807237703710298, guid: 51eab01d54e729b4cad37059432271c9,
         type: 2}
@@ -2075,7 +2075,7 @@ Prefab:
     - target: {fileID: 224261043401117020, guid: 51eab01d54e729b4cad37059432271c9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224261043401117020, guid: 51eab01d54e729b4cad37059432271c9,
         type: 2}
@@ -2085,7 +2085,7 @@ Prefab:
     - target: {fileID: 224314305852888580, guid: 51eab01d54e729b4cad37059432271c9,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224261043401117020, guid: 51eab01d54e729b4cad37059432271c9,
         type: 2}
@@ -2152,7 +2152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.32156864, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5074,7 +5074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.32156864, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5277,6 +5277,7 @@ MonoBehaviour:
   mainMenuUI: {fileID: 796143178}
   gameUI: {fileID: 668746516}
   gameSetupPanel: {fileID: 168334153}
+  instructionsText: {fileID: 1998684566}
   titleToggleGroup: {fileID: 168334157}
   nameInput: {fileID: 172423460}
   leftStuff: {fileID: 516848204}
@@ -6430,7 +6431,7 @@ GameObject:
   - component: {fileID: 1998684567}
   - component: {fileID: 1998684566}
   m_Layer: 5
-  m_Name: Description
+  m_Name: Instructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6824,7 +6825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.32156864, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
