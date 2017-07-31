@@ -637,7 +637,7 @@ RectTransform:
   m_Children:
   - {fileID: 1937285630}
   m_Father: {fileID: 754328048}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -762,41 +762,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224315378817300352, guid: 07a93c18fff593e449fd349e198a3a3f,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224315378817300352, guid: 07a93c18fff593e449fd349e198a3a3f,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224315378817300352, guid: 07a93c18fff593e449fd349e198a3a3f,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -16
-      objectReference: {fileID: 0}
-    - target: {fileID: 224812192771690314, guid: 07a93c18fff593e449fd349e198a3a3f,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224812192771690314, guid: 07a93c18fff593e449fd349e198a3a3f,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224812192771690314, guid: 07a93c18fff593e449fd349e198a3a3f,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 42.000015
-      objectReference: {fileID: 0}
-    - target: {fileID: 224812192771690314, guid: 07a93c18fff593e449fd349e198a3a3f,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07a93c18fff593e449fd349e198a3a3f, type: 2}
@@ -2511,7 +2476,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 754328048}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2660,6 +2625,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1720587078}
+  - {fileID: 852231626}
   - {fileID: 1751262081}
   - {fileID: 716078820}
   - {fileID: 129867340}
@@ -3201,6 +3167,80 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 838291985}
+--- !u!1 &852231625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 852231626}
+  - component: {fileID: 852231628}
+  - component: {fileID: 852231627}
+  m_Layer: 5
+  m_Name: You Win!
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &852231626
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 852231625}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 754328048}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 188}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &852231627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 852231625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: c6dc7724fa1d6b641abdf75b97546470, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: You Win!
+--- !u!222 &852231628
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 852231625}
 --- !u!1 &857319599
 GameObject:
   m_ObjectHideFlags: 0
@@ -5142,8 +5182,10 @@ MonoBehaviour:
     type: 2}
   choiceButtonsGroup: {fileID: 2026428634}
   gameOverPanel: {fileID: 754328047}
-  gameOverTitle: {fileID: 1720587079}
-  gameOverText: {fileID: 1751262082}
+  gameLostTitle: {fileID: 1720587079}
+  gameLostText: {fileID: 1751262082}
+  gameWonTitle: {fileID: 852231627}
+  gameWonText: {fileID: 716078821}
 --- !u!224 &1634394194
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5720,7 +5762,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 754328048}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6136,7 +6178,7 @@ Prefab:
     - target: {fileID: 224807237703710298, guid: 51eab01d54e729b4cad37059432271c9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224807237703710298, guid: 51eab01d54e729b4cad37059432271c9,
         type: 2}
@@ -6161,7 +6203,7 @@ Prefab:
     - target: {fileID: 224261043401117020, guid: 51eab01d54e729b4cad37059432271c9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -68
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224261043401117020, guid: 51eab01d54e729b4cad37059432271c9,
         type: 2}
@@ -6171,7 +6213,7 @@ Prefab:
     - target: {fileID: 224314305852888580, guid: 51eab01d54e729b4cad37059432271c9,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 28
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51eab01d54e729b4cad37059432271c9, type: 2}
