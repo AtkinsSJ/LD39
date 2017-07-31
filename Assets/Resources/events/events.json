@@ -1316,7 +1316,7 @@
 	},
 	{
 		"character": "Christoph the Cobbler",
-		"description": "Every heard the saying, 'An army marches on its stomach'? Well, actually an army marches on its boots. You don't want your soldiers all getting blisters, gangrene, athelete's foot, or some other foot-related problems. Christoph sorts all that for you with his expertly-made boots. He comes to you today, however, as you have commissioned him to make new boots for the men in your barracks.",
+		"description": "Ever heard the saying, 'An army marches on its stomach'? Well, actually an army marches on its boots. You don't want your soldiers all getting blisters, gangrene, athelete's foot, or some other foot-related problems. Christoph sorts all that for you with his expertly-made boots. He comes to you today, however, as you have commissioned him to make new boots for the men in your barracks.",
 		"choices": [
 			{
 				"description": "Pay Christoph 100 gold pieces to make the finest leather boots that will serve your men well",
@@ -1502,6 +1502,899 @@
 			
 			{
 				"description": "Kill Manfred",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Ian the Innkeeper",
+		"description": "As your son's birthday is coming up, Ian, the local innkeeper, has offered to supply the alcohol for the party (for the adults, obviously!) However, he needs you to specify what you would rather have: beer or wine. Beer is a solid crowdpleaser, but wine is certainly the more sophisticated drink, and would win you the approval of the bourgeoisie that you so desperately crave (for reasons that are, as of yet, beyond your comprehension).",
+		"choices": [
+			{
+				"description": "Choose beer for the party and let everybody be merry!",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 30,
+						"maxChange": 40
+					}
+				]
+			},
+			{
+				"description": "Choose wine for the party and transform it into a respectable soiree!",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": 30,
+						"maxChange": 40
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Ian",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Ivan the Inventor",
+		"description": "You are in the midst of a technological revolution! Incredible, ridiculous, crazy inventors all over the kingdom are applying themselves in an effort to create new and wonderful inventions that will improve the lives of very few wealthy citizens who can afford them. Ivan, your personal inventor, comes to you with his latest invention: an automated cart that carries you around, rather than being drawn by horses. He claims that it'll be all the rage in months and years to come.",
+		"choices": [
+			{
+				"description": "Support Ivan in his work and own the prototype autocart (powered by the blood of peasants)",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -30,
+						"maxChange": -30
+					},
+					{
+						"field": "love",
+						"minChange": -35,
+						"maxChange": -15
+					},
+					{
+						"field": "respect",
+						"minChange": 25,
+						"maxChange": 50
+					}
+				]
+			},
+			{
+				"description": "It'll never catch on! Tell Ivan to go back to the drawing board",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -10,
+						"maxChange": 10
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Ivan",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Peter the Peasant",
+		"description": "Peter, a simple man with simple clothes, has come to visit you with a request. You seem to be getting a lot more simple folk coming to you with their problems these days. What they could probably do with is a working class hero.\n\"Excuse me, my lordship. There's a fayre happening in my village next week and I was hoping you could help to spread the word? I've made some fliers for you to distribute - they don't have any words on, because I can't read or write, but my sons drew some lovely pictures of lots of people having fun!\"",
+		"choices": [
+			{
+				"description": "Agree to distribute Peter's fliers and spread word of the village fayre - perhaps you'll even make an appearance",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 20,
+						"maxChange": 35
+					},
+					{
+						"field": "respect",
+						"minChange": 15,
+						"maxChange": 25
+					}
+				]
+			},
+			{
+				"description": "Send Peter on his way then dispose of his fliers - you have more important matters to attend to",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -20,
+						"maxChange": -5
+					},
+					{
+						"field": "respect",
+						"minChange": -10,
+						"maxChange": -10
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Peter",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Florence the Farmer",
+		"description": "One of the joys of living in such rich, fertile lands is that there is an abundance of wildlife; one of the drawbacks is that there is also an abundance of farmers. Florence looks like a hardworking farmer at least, dirt clogging her nails and sweat dripping from her face as she addresses you.\n\"Your majesty, please hear my plea. Most of my sheep have been carried off by a fearsome dragon that is terrorising my farmland. I beg for you assistance in resolving this matter, my lord!\"",
+		"choices": [
+			{
+				"description": "Send a unit of soldiers out to protect Florence's farm and hunt down the dragon",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 10,
+						"maxChange": 20
+					},
+					{
+						"field": "respect",
+						"minChange": 25,
+						"maxChange": 35
+					}
+				]
+			},
+			{
+				"description": "Compensate Florence with 35 gold pieces and resolve to stop the dragon",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -35,
+						"maxChange": -35
+					},
+					{
+						"field": "love",
+						"minChange": 20,
+						"maxChange": 40
+					},
+					{
+						"field": "respect",
+						"minChange": 15,
+						"maxChange": 35
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Florence",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Petunia the Peasant",
+		"description": "A young lady comes to you in her hour of need begging for assistance. She tells you a woeful tale of how her evil stepmother and stepsisters lock her up and make her do all of the chores whilst they get fat off of all of her hard work. It reminds you of a famous fairytale...",
+		"choices": [
+			{
+				"description": "Ask your maids to help wash and dress Petunia, then invite her to your son's upcoming birthday party. Perhaps she'll meet a handsome prince?",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 30,
+						"maxChange": 40
+					},
+					{
+						"field": "respect",
+						"minChange": 25,
+						"maxChange": 35
+					}
+				]
+			},
+			{
+				"description": "Send Petunia back to her evil stepmother and stepsisters for a handsome reward",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": 30,
+						"maxChange": 30
+					},
+					{
+						"field": "love",
+						"minChange": -25,
+						"maxChange": -15
+					},
+					{
+						"field": "respect",
+						"minChange": -30,
+						"maxChange": -15
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Petunia",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Bruce the Brother",
+		"description": "Your insufferable younger brother, Bruce, has come to visit. He's always been resentful that you're the older brother, and jealous that he'll never sit on the throne.\n\"Alright, bro? You know, I have finally accepted that I won't be king. Still, it would be nice to sit on that big old throne of yours - just to, you know, see how it feels? So, how about it? It will only be for a minute!",
+		"choices": [
+			{
+				"description": "Be a generous big brother and let Bruce sit on your throne for exactly one minute",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 20,
+						"maxChange": 35
+					},
+					{
+						"field": "respect",
+						"minChange": -15,
+						"maxChange": -5
+					}
+				]
+			},
+			{
+				"description": "Refuse Bruce's request on the grounds that it is incredibly childish. Anyway, currently your throne fits your backside perfectly, and Bruce might ruin that somehow...",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -15,
+						"maxChange": -5
+					},
+					{
+						"field": "respect",
+						"minChange": 20,
+						"maxChange": 35
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Bruce",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Sylvester the Spymaster",
+		"description": "In this times of deceit and subterfuge, nobody can be trusted. As such, you have your own spy ring, just as your suspect all the other kingdoms do. Sylvester, your spymaster, has come to you with important news. He's a creepy man: tall and slender, with a long, beak-like nose and a lisp that makes it sound like he's hissing. Still, he's extraordinarily good at his job.\n\"Your majesssty, I have sssome newsss for you. My ssspiesss have reported that two of our neighbouring rulersss are conssspiring againssst usss. They plan to overthrow you at the firssst opportunity. What would you have me do?\"",
+		"choices": [
+			{
+				"description": "Remove both conspiring rulers from your Christmas card list - that will show them!",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": 15,
+						"maxChange": 30
+					}
+				]
+			},
+			{
+				"description": "Go to war with both kingdoms simultaneously for a mere 75 gold pieces",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -75,
+						"maxChange": -75
+					},
+					{
+						"field": "respect",
+						"minChange": 35,
+						"maxChange": 55
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Sylvester",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Garth the Guard",
+		"description": "For some reason, being king makes your life worth more than everybody else's. As such, you have a great many guards who protect you at all times. Strangely, all of their names begin with the letter 'G'. One of your guards has left his post to come and speak to you. You think it's Gabriel... or is it Gad? Gregor, perhaps?\n\"My liege, there's a large group of peasants amassing just outside of the castle walls. They're getting rather rowdy. Some of them have even made effigies of you, which they're threatening to burn! Shall I deal with them?\"",
+		"choices": [
+			{
+				"description": "Burning effigies? That wouldn't look good for your public image. Ask Garth to quietly make the peasant mob 'disappear'",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -20,
+						"maxChange": -5
+					},
+					{
+						"field": "respect",
+						"minChange": -10,
+						"maxChange": 0
+					}
+				]
+			},
+			{
+				"description": "Give the peasant mob 25 gold pieces to go and amass somewhere else",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -25,
+						"maxChange": -25
+					},
+					{
+						"field": "love",
+						"minChange": 10,
+						"maxChange": 30
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Garth",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Lilly the Librarian",
+		"description": "Lilly looks after the vast assortment of books that are held in the castle library. You have collected copies of nearly every book currently in existence. If only you had time to actually read them...\n\"Sire, I'm having trouble obtaining a copy of that volume you asked for, 'Incredible Beasts and Where They Reside, Vol. 3'. I have heard that there might be a copy in one of the neighbouring kingdoms. Would you like me to go and check it out?\"",
+		"choices": [
+			{
+				"description": "Absolutely! Send Lilly with 30 gold pieces to go and negotiate a price for the book",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -30,
+						"maxChange": -30
+					},
+					{
+						"field": "respect",
+						"minChange": 20,
+						"maxChange": 30
+					}
+				]
+			},
+			{
+				"description": "Absolutely! Ask Lilly to rendezvous with Sylvester the Spymaster in the hope of finding some way to steal the book",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": 10,
+						"maxChange": 20
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Lilly",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Megan the Maid",
+		"description": "You wife employs a great many maids to carry out various tasks in and around the castle. You know Megan to be a quiet but hardworking girl, obedient and loyal. Yet today she comes to you with tears running down her cheeks, her eyes red and puffy. She tells you a sorrowful tale of how her betrothed, Bertie, lost his job, meaning that the pair can no longer afford to get married, as they were due to at the end of the month.",
+		"choices": [
+			{
+				"description": "Offer to employ Bertie as one of your guards, but insist that his name be changed to Gale",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 20,
+						"maxChange": 35
+					},
+					{
+						"field": "respect",
+						"minChange": 20,
+						"maxChange": 35
+					}
+				]
+			},
+			{
+				"description": "Offer to pay 25 gold pieces for Megan and Bertie's wedding on the condition that you be invited",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -25,
+						"maxChange": -25
+					},
+					{
+						"field": "love",
+						"minChange": 20,
+						"maxChange": 45
+					},
+					{
+						"field": "respect",
+						"minChange": 10,
+						"maxChange": 30
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Megan",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Patrick the Plumber",
+		"description": "Sorting out the plumbing in a castle of this size is a mighty job, requiring a whole team of highly-skilled plumbers. The plumbers are led by a jolly giant of a man, Patrick. Patrick is always smiling, which puts you on edge a little as nobody should smile that much...\n\"Good morning to you, my lord! Haha! What a glorious day it is! My boys and I were just running some maintenance on the plumbing in the sleeping quarters when we came across something rather nasty in the toilet of your en-suite! Haha! My, I'm not sure why I'm laughing so much, it was truly horrible...\"",
+		"choices": [
+			{
+				"description": "Pay Patrick a nominal fee of 5 gold pieces to keep quiet about your dirty little secret",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -5,
+						"maxChange": -5
+					}
+				]
+			},
+			{
+				"description": "Laugh along uncomfortably with Patrick then refuse to discuss the matter - ever",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -20,
+						"maxChange": -10
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Patrick",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Teresa the Time Traveller",
+		"description": "Your next visitor takes your breath away. She is dressed quite unlike anybody you have ever seen. Indeed, she wears items of clothing that you don't even know the names of, making it impossible to describe her appearance. She approaches you confidently, and addresses you as if she were chatting to a friend in the local tavern.\n\"Good day to you, King... err... King! My name is Teresa, and I am a time traveller from the future. I have travelled back to give you a warning. There are those conspire to overthrow you - your rulership is at risk! Act quickly or you will lose all that you hold dear!\"",
+		"choices": [
+			{
+				"description": "How dare somebody else dress more fashionably than you! Throw Teresa in the dungeons and take possession of her time machine",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -10,
+						"maxChange": 10
+					},
+					{
+						"field": "respect",
+						"minChange": 5,
+						"maxChange": 25
+					}
+				]
+			},
+			{
+				"description": "Did this woman really just travel back in time to tell you something you already knew? Send Teresa on her way",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 0,
+						"maxChange": 10
+					},
+					{
+						"field": "respect",
+						"minChange": 0,
+						"maxChange": 10
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Teresa",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Trevor the Tutor",
+		"description": "Your son's tutor, a fine, upstanding gentleman by the name of Trevor, has come to pay you a visit. It seems that he wishes to discuss your son's progress and attainment.\n\"Your royal highness, the good Prince Spencer is making... limited progress in all areas. I fear, my lord, that he is too easily distracted, and as such is not reaching the levels of attainment expected of a boy of his age...\"",
+		"choices": [
+			{
+				"description": "Slip Trevor 10 gold pieces to improve your son's grades",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -10,
+						"maxChange": -10
+					},
+					{
+						"field": "love",
+						"minChange": -15,
+						"maxChange": -5
+					},
+					{
+						"field": "respect",
+						"minChange": 5,
+						"maxChange": 25
+					}
+				]
+			},
+			{
+				"description": "Dismiss Trevor and find a new, better tutor who will shine a light on your son's natural skill",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -10,
+						"maxChange": 10
+					},
+					{
+						"field": "respect",
+						"minChange": 10,
+						"maxChange": 30
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Trevor",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Carlos the Carpenter",
+		"description": "Your bold and beautiful throne was made by a highly skilled carpenter by the name of Carlos, quite possibly the most talented carpenter alive. He has served you well over the years, and has come to visit you regarding another job.\n\"My lord, I need to discuss with you the specification for this shoe rack that you have requested I build.\"",
+		"choices": [
+			{
+				"description": "Pay 30 gold pieces for a shoe rack that is grand and mighty - a symbol of your strength and power as ruler of this kingdom!",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -30,
+						"maxChange": -30
+					},
+					{
+						"field": "love",
+						"minChange": -20,
+						"maxChange": -30
+					},
+					{
+						"field": "respect",
+						"minChange": 20,
+						"maxChange": 35
+					}
+				]
+			},
+			{
+				"description": "Pay 10 gold pieces for a shoe rack that is modest but serves its purpose",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -10,
+						"maxChange": -10
+					},
+					{
+						"field": "love",
+						"minChange": -10,
+						"maxChange": 10
+					},
+					{
+						"field": "respect",
+						"minChange": 10,
+						"maxChange": 20
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Carlos",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Billy the Blacksmith",
+		"description": "Billy is a bull of a man, nearing seven feet tall with bulging biceps. He is always drenched with sweat, which isn't surprising considering he spends his days working at a forge. He is renowned as a master of his craft, and produces solid and sturdy, yet also precise and superly decorated pieces of armour. He has come today to fit you for a new breastplate.",
+		"choices": [
+			{
+				"description": "Let Billy do what Billy does best - splash the cash (a mere 45 gold pieces) for bejeweled breastplate that will dazzle and astonish",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -45,
+						"maxChange": -45
+					},
+					{
+						"field": "love",
+						"minChange": 5,
+						"maxChange": 15
+					},
+					{
+						"field": "respect",
+						"minChange": 30,
+						"maxChange": 40
+					}
+				]
+			},
+			{
+				"description": "Ask Billy to hold back on the unnecessary adornments - a simple breastplate for 25 gold pieces will do you just fine",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -25,
+						"maxChange": -25
+					},
+					{
+						"field": "love",
+						"minChange": 25,
+						"maxChange": 40
+					},
+					{
+						"field": "respect",
+						"minChange": 20,
+						"maxChange": 35
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Billy",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Phillip the Philosopher",
+		"description": "Philosophers - just what are they for? They sit around all day thinking and debating, but to what end? Phillip does present himself as a wise man, mind, and he always gives good counsel.\n\"My lord, I do believe that I have stumbled upon a most important truth: war can never be justified, no matter the ratoinality behind it. As such, I believe that we should be a peaceful kingdom of pacifists.\"",
+		"choices": [
+			{
+				"description": "According to Plato, philosophers make the best kings. Abdicate and let Phillip take the throne",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -200,
+						"maxChange": -200
+					}
+				]
+			},
+			{
+				"description": "Phillip is clearly speaking nonsense - war is a natural part of rulership. Throw him in the dungeons",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -25,
+						"maxChange": -15
+					},
+					{
+						"field": "respect",
+						"minChange": 20,
+						"maxChange": 35
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Phillip",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Alex the Apprentice",
+		"description": "Alex is the apprentice of Merlin the Magician, and has been gradually learning the secrets of how to perform magic. He eagerly shows you a new trick that he has been taught, but he messes it up horrendously and just ends up making a fool of himself. He hangs his head in shame, fully aware of all of his mistakes.",
+		"choices": [
+			{
+				"description": "Congratulate Alex on his effort and lie about how well his trick went",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 20,
+						"maxChange": 40
+					},
+					{
+						"field": "respect",
+						"minChange": -30,
+						"maxChange": -10
+					}
+				]
+			},
+			{
+				"description": "Tell Alex the truth - he really sucks at magic!",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -30,
+						"maxChange": -10
+					},
+					{
+						"field": "respect",
+						"minChange": 20,
+						"maxChange": 40
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Alex",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Merlin the Magician",
+		"description": "Merlin the Magician struts around like he is the real deal, when, as a matter of fact, he is nothing more than a street magician. Nevertheless, he models himself after the wizard of legend, wearing a long, purple robe, pointy hat, and sporting a think beard.\n\"Your majesty, why do you employ so many servants here? Using my magic, I could easily get all of these chores performed for you!\"",
+		"choices": [
+			{
+				"description": "Invite Merlin to try and perform all of your servants' chores simultaneously, leading to his inevitable humiliation",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -40,
+						"maxChange": -30
+					},
+					{
+						"field": "respect",
+						"minChange": -10,
+						"maxChange": 10
+					}
+				]
+			},
+			{
+				"description": "Politely decline Merlin's offer, explaining that magic is not real",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": -10,
+						"maxChange": 10
+					},
+					{
+						"field": "respect",
+						"minChange": 15,
+						"maxChange": 30
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Merlin",
+				"consequences": [
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -5
+					}
+				]
+			}
+		]
+	},
+	{
+		"character": "Phoenix the Physician",
+		"description": "An exotic man, Phoenix is an expert physician, having trained after some other expert physician in some great hospital or another. He frequently visits the castle to performs check-ups on your entire family, and on this occasion comes with bad news.\n\"Your son is not well, my lord. He has contracted scurvy. I would recommend you switch him to a high-fruit diet before he gets any worse.",
+		"choices": [
+			{
+				"description": "Heed Phoenix's advice and make sure that Spencer is eating plenty of fruit",
+				"consequences": [
+					{
+						"field": "love",
+						"minChange": 20,
+						"maxChange": 35
+					},
+					{
+						"field": "respect",
+						"minChange": -25,
+						"maxChange": -10
+					}
+				]
+			},
+			{
+				"description": "Secretly buy some dodgy Vitamin C supplements for 15 gold pieces so that nobody else finds out about the issue",
+				"consequences": [
+					{
+						"field": "gold",
+						"minChange": -15,
+						"maxChange": -15
+					}
+				]
+			},
+			
+			{
+				"description": "Kill Phoenix",
 				"consequences": [
 					{
 						"field": "respect",
