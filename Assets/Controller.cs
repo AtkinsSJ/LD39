@@ -109,6 +109,7 @@ public class Controller : MonoBehaviour
 	string taxTextTemplate;
 	public Slider loveSlider;
 	public Slider respectSlider;
+	public Button setTaxButton;
 
 	// Taxes UI
 	public GameObject taxesPanel;
@@ -337,6 +338,8 @@ public class Controller : MonoBehaviour
 	public void OnSetTaxesClicked()
 	{
 		if (status.gameOver) return;
+		if (status.actionsLeftToday == 0) return;
+
 		taxSlider.minValue = minDailyTax;
 		taxSlider.maxValue = maxDailyTax;
 		taxSlider.value = status.dailyTax;
@@ -345,6 +348,7 @@ public class Controller : MonoBehaviour
 
 	public void OnSaveTaxesClicked()
 	{
+		status.actionsLeftToday--;
 		status.dailyTax = (int)taxSlider.value;
 		UpdateUI();
 		ShowCourt();
@@ -587,6 +591,9 @@ public class Controller : MonoBehaviour
 		taxText.text = string.Format(taxTextTemplate, status.dailyTax);
 		moneyText.text = string.Format(moneyTextTemplate, status.money);
 		actionsText.text = string.Format(actionsTextTemplate, status.actionsLeftToday);
+
+		bool canTakeAction = status.actionsLeftToday > 0;
+		setTaxButton.gameObject.SetActive(canTakeAction);
 
 		CheckIfGameOver();
 	}
