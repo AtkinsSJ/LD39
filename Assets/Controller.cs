@@ -144,6 +144,13 @@ public class Controller : MonoBehaviour
 	public Text gameWonText;
 	string gameWonTextTemplate;
 
+	// SFX
+	public AudioClip executeSound,
+		loseSound,
+		winSound,
+		newDaySound,
+		taxSound;
+
 	void ShowPanel(GameObject panelToShow)
 	{
 		gameSetupPanel.SetActive(false);
@@ -234,6 +241,13 @@ public class Controller : MonoBehaviour
 		BeginGame();
 	}
 
+	void PlaySound(AudioClip sound)
+	{
+		Debug.Log("Trying to play sound:");
+		Debug.Log(sound);
+		GetComponent<AudioSource>().PlayOneShot(sound);
+	}
+
 	public void BeginGame()
 	{
 		ShowPanel(null);
@@ -257,7 +271,10 @@ public class Controller : MonoBehaviour
 
 	public void StartDay()
 	{
-		if (status.day != 0) CollectTaxes();
+		if (status.day != 0)
+		{
+			CollectTaxes();
+		}
 
 		status.day++;
 		status.actionsLeftToday = actionsPerDay;
@@ -321,6 +338,11 @@ public class Controller : MonoBehaviour
 
 		ShowCourt();
 		UpdateUI();
+
+		if (!status.gameOver)
+		{
+			PlaySound(newDaySound);
+		}
 	}
 
 	void CollectTaxes()
@@ -344,6 +366,8 @@ public class Controller : MonoBehaviour
 	{
 		if (status.gameOver) return;
 		if (status.actionsLeftToday == 0) return;
+
+		PlaySound(taxSound);
 
 		taxSlider.minValue = minDailyTax;
 		taxSlider.maxValue = maxDailyTax;
@@ -461,6 +485,7 @@ public class Controller : MonoBehaviour
 		if (choice.description.StartsWith("Kill "))
 		{
 			deadEvents.Add(currentEvent);
+			PlaySound(executeSound);
 		}
 		else
 		{
@@ -577,10 +602,12 @@ public class Controller : MonoBehaviour
 
 		if (wonGame)
 		{
+			PlaySound(winSound);
 			gameWonText.text = string.Format(gameWonTextTemplate, status.day, explanation);
 		}
 		else
 		{
+			PlaySound(loseSound);
 			gameLostTitle.text = string.Format(gameLostTitleTemplate, status.title);
 			gameLostText.text = string.Format(gameLostTextTemplate, status.day, explanation);
 		}
