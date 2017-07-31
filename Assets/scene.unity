@@ -5241,7 +5241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17c5916fe2737342a7a57865d6a265d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialMoney: 100
+  initialMoney: 50
   status:
     name: 
     title: 
@@ -5267,7 +5267,7 @@ MonoBehaviour:
   daysPeopleWillWait: 2
   minDailyTax: 0
   maxDailyTax: 50
-  loveLostForMaxTax: 30
+  loveLostForMaxTax: 50
   consequencesForIgnoredPetition:
   - field: love
     minChange: -2
