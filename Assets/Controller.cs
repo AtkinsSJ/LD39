@@ -133,10 +133,13 @@ public class Controller : MonoBehaviour
 
 	// Game Over UI
 	public GameObject gameOverPanel;
-	public Text gameOverTitle;
-	string gameOverTitleTemplate;
-	public Text gameOverText;
-	string gameOverTextTemplate;
+	public Text gameLostTitle;
+	string gameLostTitleTemplate;
+	public Text gameLostText;
+	string gameLostTextTemplate;
+	public Text gameWonTitle;
+	public Text gameWonText;
+	string gameWonTextTemplate;
 
 	void ShowPanel(GameObject panelToShow)
 	{
@@ -170,8 +173,9 @@ public class Controller : MonoBehaviour
 		//	allEvents.AddRange(loadedEvents.events);
 		//}
 
-		gameOverTextTemplate = gameOverText.text;
-		gameOverTitleTemplate = gameOverTitle.text;
+		gameWonTextTemplate = gameWonText.text;
+		gameLostTextTemplate = gameLostText.text;
+		gameLostTitleTemplate = gameLostTitle.text;
 		dayTextTemplate = dayText.text;
 		actionsTextTemplate = actionsText.text;
 		moneyTextTemplate = moneyText.text;
@@ -304,7 +308,7 @@ public class Controller : MonoBehaviour
 		{
 			// We still have no events even after lookig EVERWHERE!
 			// This means everyone must be dead. Oops.
-			ShowGameOverScreen("You killed every single person in the Kingdom. There's nobody left to grow food or defend you. You die sad and alone.");
+			ShowGameOverScreen(false, "You killed every single person in the Kingdom. There's nobody left to grow food or defend you. You die sad and alone.");
 
 			return;
 		}
@@ -504,39 +508,69 @@ public class Controller : MonoBehaviour
 		}
 	}
 
-	void CheckIfWeLost()
+	void CheckIfGameOver()
 	{
+		bool gameOver = false;
 		bool weLost = false;
 
-		string lossReason = "";
+		string explanation = "";
 
 		if (status.love <= -100)
 		{
 			weLost = true;
-			lossReason = "Your people despise you so much that they overthrew you and had you executed. People were queuing up for hours to dance on your grave.";
+			gameOver = true;
+			explanation = "Your people despise you so much that they overthrew you and had you executed. People were queuing up for hours to dance on your grave.";
 		}
-		if (status.respect <= -100)
+		else if (status.respect <= -100)
 		{
 			weLost = true;
-			lossReason = "Your rulership was so corrupt that your people revolted. Your head is currently displayed on a pole outside your former palace.";
+			gameOver = true;
+			explanation = "Your rulership was so corrupt that your people revolted. Your head is currently displayed on a pole outside your former palace.";
 		}
-		if (status.money < 0)
+		else if (status.money < 0)
 		{
 			weLost = true;
-			lossReason = "When they discovered that your treasury is empty, all of your subjects left you.";
+			gameOver = true;
+			explanation = "When they discovered that your treasury is empty, all of your subjects left you.";
+		}
+		else if (status.love >= 100)
+		{
+			weLost = false;
+			gameOver = true;
+			explanation = string.Format("Your people adore you! You will go down in history as {0} {1} the Beloved, most popular monarch ever to have ruled on Earth.", status.title, status.name);
+		}
+		else if (status.respect >= 100)
+		{
+			weLost = false;
+			gameOver = true;
+			explanation = string.Format("You are the most respected {0} in known history. Your reign is marked by outstanding justice and wisdom, and rulers from across the Earth come to seek your advice.", status.title, status.name);
 		}
 
-		if (weLost)
+		if (gameOver)
 		{
-			ShowGameOverScreen(lossReason);
+			ShowGameOverScreen(!weLost, explanation);
 		}
 	}
 
-	void ShowGameOverScreen(string lossReason)
+	void ShowGameOverScreen(bool wonGame, string explanation)
 	{
 		status.gameOver = true;
-		gameOverTitle.text = string.Format(gameOverTitleTemplate, status.title);
-		gameOverText.text = string.Format(gameOverTextTemplate, status.day, lossReason);
+
+		gameWonTitle.gameObject.SetActive(wonGame);
+		gameWonText.gameObject.SetActive(wonGame);
+		gameLostTitle.gameObject.SetActive(!wonGame);
+		gameLostText.gameObject.SetActive(!wonGame);
+
+		if (wonGame)
+		{
+			gameWonText.text = string.Format(gameWonTextTemplate, status.day, explanation);
+		}
+		else
+		{
+			gameLostTitle.text = string.Format(gameLostTitleTemplate, status.title);
+			gameLostText.text = string.Format(gameLostTextTemplate, status.day, explanation);
+		}
+
 		ShowPanel(gameOverPanel);
 	}
 
@@ -554,6 +588,6 @@ public class Controller : MonoBehaviour
 		moneyText.text = string.Format(moneyTextTemplate, status.money);
 		actionsText.text = string.Format(actionsTextTemplate, status.actionsLeftToday);
 
-		CheckIfWeLost();
+		CheckIfGameOver();
 	}
 }
