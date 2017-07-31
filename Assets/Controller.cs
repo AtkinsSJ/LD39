@@ -1,6 +1,5 @@
 ﻿
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -153,13 +152,23 @@ public class Controller : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		var eventGuids = AssetDatabase.FindAssets("t:TextAsset", new string[] { "Assets/events" });
-		foreach (var guid in eventGuids)
+
+		Object[] eventAssets = Resources.LoadAll("events", typeof(TextAsset));
+		foreach (var obj in eventAssets)
 		{
-			TextAsset eventAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(AssetDatabase.GUIDToAssetPath(guid));
+			TextAsset eventAsset = obj as TextAsset;
 			var loadedEvents = JsonUtility.FromJson<EventArray>(eventAsset.text);
 			allEvents.AddRange(loadedEvents.events);
 		}
+
+		// Below is the old code we were using to load events, but it only works inside the editor!
+		//var eventGuids = AssetDatabase.FindAssets("t:TextAsset", new string[] { "Assets/events" });
+		//foreach (var guid in eventGuids)
+		//{
+		//	TextAsset eventAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(AssetDatabase.GUIDToAssetPath(guid));
+		//	var loadedEvents = JsonUtility.FromJson<EventArray>(eventAsset.text);
+		//	allEvents.AddRange(loadedEvents.events);
+		//}
 
 		gameOverTextTemplate = gameOverText.text;
 		gameOverTitleTemplate = gameOverTitle.text;
