@@ -348,8 +348,13 @@ public class Controller : MonoBehaviour
 
 	public void OnSaveTaxesClicked()
 	{
-		status.actionsLeftToday--;
-		status.dailyTax = (int)taxSlider.value;
+		int newTax = (int)taxSlider.value;
+		if (newTax != status.dailyTax)
+		{
+			status.actionsLeftToday--;
+			status.dailyTax = newTax;
+		}
+
 		UpdateUI();
 		ShowCourt();
 	}
