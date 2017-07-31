@@ -695,7 +695,7 @@
 	},
 	{
 		"character": "Dorothy the Daughter",
-		"description": "Your sweet, innocent daughter toddles up to you. Oh, the be a child again... She knows nothing of the pains of love, death or taxes. Dorothy has her mother's eyes and your determined and adventurous spirit. Who else would dare approach the king without an appointment? Speaking of not having an appointment, where is Dorothy's nanny?",
+		"description": "Your sweet, innocent daughter toddles up to you. Oh, to be a child again... She knows nothing of the pains of love, death or taxes. Dorothy has her mother's eyes and your determined and adventurous spirit. Who else would dare approach the king without an appointment? Speaking of not having an appointment, where is Dorothy's nanny?",
 		"choices": [
 			{
 				"description": "Pick up Dorothy and give her a cuddle. Who cares where the nanny is?",
@@ -1215,7 +1215,7 @@
 		"description": "Charlotte, your head chef, is in charge of baking a magnificent cake for your son's upcoming birthday, along with a vast and varied birthday feast. This special occasion has been in the making for several months, and it cost a great deal to acquire the rare and splendid elements required to bring it all together. She comes to you now with a problem: there is no truffle oil in the castle!",
 		"choices": [
 			{
-				"description": "Send Charlotte our with Pansie the Pig to fund some wild truffles to use",
+				"description": "Send Charlotte out with Pansie the Pig to find some wild truffles to use",
 				"consequences": [
 					{
 						"field": "love",
@@ -1796,7 +1796,7 @@
 	},
 	{
 		"character": "Sylvester the Spymaster",
-		"description": "In this times of deceit and subterfuge, nobody can be trusted. As such, you have your own spy ring, just as your suspect all the other kingdoms do. Sylvester, your spymaster, has come to you with important news. He's a creepy man: tall and slender, with a long, beak-like nose and a lisp that makes it sound like he's hissing. Still, he's extraordinarily good at his job.\n\"Your majesssty, I have sssome newsss for you. My ssspiesss have reported that two of our neighbouring rulersss are conssspiring againssst usss. They plan to overthrow you at the firssst opportunity. What would you have me do?\"",
+		"description": "In these times of deceit and subterfuge, nobody can be trusted. As such, you have your own spy ring, just as you suspect all the other kingdoms do. Sylvester, your spymaster, has come to you with important news. He's a creepy man: tall and slender, with a long, beak-like nose and a lisp that makes it sound like he's hissing. Still, he's extraordinarily good at his job.\n\"Your majesssty, I have sssome newsss for you. My ssspiesss have reported that two of our neighbouring rulersss are conssspiring againssst usss. They plan to overthrow you at the firssst opportunity. What would you have me do?\"",
 		"choices": [
 			{
 				"description": "Remove both conspiring rulers from your Christmas card list - that will show them!",
@@ -2175,7 +2175,7 @@
 		"description": "Billy is a bull of a man, nearing seven feet tall with bulging biceps. He is always drenched with sweat, which isn't surprising considering he spends his days working at a forge. He is renowned as a master of his craft, and produces solid and sturdy, yet also precise and superly decorated pieces of armour. He has come today to fit you for a new breastplate.",
 		"choices": [
 			{
-				"description": "Let Billy do what Billy does best - splash the cash (a mere 45 gold pieces) for bejeweled breastplate that will dazzle and astonish",
+				"description": "Let Billy do what Billy does best - splash the cash (a mere 45 gold pieces) for a bejeweled breastplate that will dazzle and astonish",
 				"consequences": [
 					{
 						"field": "gold",
@@ -2229,7 +2229,7 @@
 	},
 	{
 		"character": "Phillip the Philosopher",
-		"description": "Philosophers - just what are they for? They sit around all day thinking and debating, but to what end? Phillip does present himself as a wise man, mind, and he always gives good counsel.\n\"My lord, I do believe that I have stumbled upon a most important truth: war can never be justified, no matter the ratoinality behind it. As such, I believe that we should be a peaceful kingdom of pacifists.\"",
+		"description": "Philosophers - just what are they for? They sit around all day thinking and debating, but to what end? Phillip does present himself as a wise man, mind, and he always gives good counsel.\n\"My lord, I do believe that I have stumbled upon a most important truth: war can never be justified, no matter the rationality behind it. As such, I believe that we should be a peaceful kingdom of pacifists.\"",
 		"choices": [
 			{
 				"description": "According to Plato, philosophers make the best kings. Abdicate and let Phillip take the throne",
